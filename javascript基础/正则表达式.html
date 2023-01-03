@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //text()检测 exec()检索
+        let src = '这里面有没有这个字还有这个字';
+        let reg = /这个字/;
+        
+        console.log(reg.test(src));//true
+        console.log(reg.exec(src));
+        //0: "这个字"
+        //groups: undefined
+        //index: 6
+        //input: "这里面有没有这个字还有这个字"
+        //length: 1
+        
+
+
+        //元字符 -- 边界符
+
+
+        //开头  ^ 
+        console.log('----------------');
+        console.log(/^a/.test('aaa'));//true
+        console.log(/^b/.test('aaa'));//false
+        console.log(/^aa/.test('a'));//false
+        console.log('---------------');
+
+        //结尾 $
+        console.log(/b$/.test('aaa'));//false
+        console.log(/a$/.test('aaa'));//true
+        console.log(/bb$/.test('aab'));//false
+
+        //准确匹配 ^$
+        console.log('---------------');
+        console.log(/^a$/.test('aa'));//false;
+        console.log(/^a$/.test('a'));//true;
+
+
+        //量词 * + ? {}
+
+        //*  >=0
+        console.log(/a*/.test('aaa'));//true;
+        console.log(/a*/.test(''));//true
+        console.log('------');
+        //+  >=1
+        console.log('------');
+        console.log(/a+/.test('aaa'));//true 
+        console.log(/a+/.test(''));//false
+        
+        //?  0||1
+        console.log('------');
+        console.log(/^a?$/.test('aaa'))//false
+        console.log(/^a?$/.test('a'));//true
+        console.log(/^a?$/.test(''));//true
+
+        //{n}   ==n
+        //{n,}  >=n
+        //{n,m} n<=m
+    </script>
+</body>
+</html>

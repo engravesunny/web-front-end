@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.形参初始值 一般将有初始值的放在最后
+        let add = function(a,b,c=2){
+            return a+b+c;
+        }
+        console.log(add(1,2));
+
+        //2.
+        let connect = function({host,address,name}){
+            console.log(host);
+            console.log(address);
+            console.log(name);
+        }
+        connect({
+            host:111,
+            address:222,
+            name:333
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击换色</title>
+    <style>
+        .box{
+            margin-right: 10px;
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <script>
+        let box = document.querySelectorAll('.box');
+        //第一种写法
+        // for(var i=0;i<box.length;i++){
+        //     box[i].addEventListener('click',function(){
+        //         this.style.backgroundColor = 'red';
+        //     })
+        // }
+        //第二种写法
+        for(let i=0;i<box.length;i++){
+            box[i].addEventListener('click',function(){
+                box[i].style.backgroundColor = 'red';
+            })
+        }
+        //第二种写法中let i = 0不能用var替代
+        //因为var没有块级作用域
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+div{
+    margin: 100px auto;
+    width: 600px;
+    height: 200px;
+    border: 3px solid black;
+}
+img{
+    float: left;
+    vertical-align: middle;
+}
+
+
+    </style>
+</head>
+<body>
+
+
+
+    
+    <script>
+        let deposit=25000
+        let number
+        while(number=Number(prompt(`请输入你要进行的操作:1.取款 2.存款 3.查询余额 4.退出`))){
+            switch(number){
+                case 1:let a=Number(prompt(`请输入您要取款的数额`))
+                if(deposit>=a){
+                    deposit-=a
+                    alert(`取款成功！！您当前的余额为${deposit}元`)
+                }
+                else{
+                    alert(`您的余额为${deposit}元，无法取款相应数额！！`)
+                }
+                break
+                case 2:deposit+=Number(prompt(`请输入您要存款的数额`))
+                alert(`存款成功！您当前的余额为${deposit}元`)
+                break
+                case 3:alert(`您当前的余额为${deposit}元`)
+                break
+            }
+            if(number===4){
+                alert(`欢迎下次光临，您已成功退出！！`)
+                break
+            }
+            if(number!==1&&number!==2&&number!==3&&number!==4){
+                alert(`输入错误，请重新输入！！`)
+            }
+        }
+        document.write(`
+        
+        
+        
+        <div>
+        您的余额为:${deposit}元
+        <img src="../css进阶/007.png" alt="">
+    </div>
+    
+        
+        
+        
+        
+        `)
+    </script>
+</body>
+</html>

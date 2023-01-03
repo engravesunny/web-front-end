@@ -1,0 +1,213 @@
+/* 各个页面相同的样式表：头，尾部 */
+.banning{
+    width: 1240px;
+    margin: 0 auto;
+}
+.astride{
+    height: 52px;
+    background-color: #333333;
+}
+.astride li{
+    float: right;
+}
+
+.astride a{
+    font-size: 14px;
+    border-right: 1px solid #666666;
+    padding: 0 7px;
+    text-align: center;
+    line-height: 52px;
+    color: #dcdcdc;
+}
+.astride li span{
+    display: inline-block;
+    width: 12px;
+    height: 16px;
+    background-image: url(../images/sprites.png);
+    background-position: -160px -70px;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+
+.header{
+    height: 130px;
+    background-color: #fff;
+}
+
+.logo{
+    margin-top: 30px;
+    margin-right: 40px;
+    float: left;
+    width: 207px;
+    height: 70px;
+    background-image: url(../images/logo.png);
+    background-size: contain;
+}
+
+.header .nav li{
+    height: 30px;
+    margin-top: 50px;
+    margin-right: 48px;
+    float: left;
+}
+
+
+.header .nav li a{
+    height: 30px;
+    padding-bottom: 7px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.header .nav li a:hover{
+    color:#27ba9b;
+    border-bottom: 1px solid #27ba9b;
+}
+
+
+.header .search{
+    position: relative;
+    margin-top: 54px;
+    float: left;
+    width: 172px;
+    height: 30px;
+    background-color: pink;
+}
+
+.header .car{
+    position: relative;
+    margin-top: 58px;
+    margin-left: 15px;
+    float: left;
+    width: 23px;
+    height: 23px;
+    background-image: url(../images/sprites.png);
+    background-position: -120px -70px;
+}
+
+
+.header .search input{
+    padding-left: 30px;
+    width: 172px;
+    height: 30px;
+    border-bottom: 2px solid #e7e7e7;
+}
+
+.header .search input::placeholder{
+    font-family: PingFangSC-Regular;
+	font-size: 14px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #cccccc;
+}
+
+
+.header .search span{
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 0;
+    left: 2px;
+    background-image: url(../images/sprites.png);
+    background-position: -80px -70px;
+}
+
+.header .car span{
+    position: absolute;
+    color: #fff;
+    top: -9px;
+    right: -9px;
+    width: 20px;
+    height: 15px;
+    text-align: center;
+    line-height: 15px;
+    background-color: #e26237;
+	border-radius: 8px;
+}
+.bottom{
+    height: 342px;
+    background-color: #333333;
+}
+.bottom .banning{
+    width: 1393px;
+    margin: 0 auto;
+}
+.feature{
+    height: 172px;
+    border-bottom: 3px solid #434343;
+}
+.bottom .feature ul{
+    margin-top: 60px;
+    margin-left:136px ;
+}
+.bottom .feature li{
+    margin-top: 60px;
+    float:left;
+    margin-right: 300px;
+    font-family: PingFangSC-Light;
+	font-size: 28px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #ffffff;
+}
+
+.bottom .feature li:last-child{
+    margin-right: 0;
+}
+
+.bottom .feature li span{
+    display: inline-block;
+    width: 58px;
+    height: 58px;
+    vertical-align: middle;
+    margin-right: 14px;
+    background-image: url(../images/sprites.png);
+    background-position: 0 0;
+}
+.bottom .feature li:nth-child(2) span{
+    background-position: -130px 0;
+}
+.bottom .feature li:nth-child(3) span{
+    background-position: -65px 0;
+}
+
+.bottom .copyright{
+    
+    margin: 41px auto;
+    height: 48px;
+    width: 537px;
+    /* background-color: pink; */
+}
+.bottom .copyright li{
+    float: left;
+    height: 14px;
+    line-height: 14px;
+    padding: 0 8px;
+    border-right: 2px solid #999999;
+}
+.bottom .copyright li a{
+    
+    /* border-left: 1px solid #999999; */
+    font-family: PingFangSC-Light;
+	font-size: 14px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #999999;
+}
+
+.bottom .copyright li:last-child{
+    margin-right: 0;
+    border: 0;
+}
+.bottom .copyright span{
+    margin: 20px 190px;
+    font-family: PingFangSC-Light;
+	font-size: 14px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #999999;
+}

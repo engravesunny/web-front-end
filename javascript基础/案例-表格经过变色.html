@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        table{
+            width: 600px;
+            margin: 200px auto;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>生日</td>
+                <td>爱好</td>
+                <td>其他</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>小明</td>
+                <td>14</td>
+                <td>11.23</td>
+                <td>踢足球</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>小丽</td>
+                <td>女</td>
+                <td>2.11</td>
+                <td>唱歌</td>
+                <td>无</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        let trs=document.querySelector('tbody').querySelectorAll('tr');
+        for(let i=0;i<trs.length;i++){
+            trs[i].onmouseover =function(){
+                trs[i].style.backgroundColor = 'pink';
+            }
+            trs[i].onmouseout =function(){
+                trs[i].style.backgroundColor = '';
+            }
+        }
+    </script>
+</body>
+</html>

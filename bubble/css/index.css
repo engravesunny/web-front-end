@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+.top {
+  height: 60px;
+  background-color: #2f7fdd;
+  text-align: center;
+  line-height: 60px;
+  font-size: 18px;
+  color: #fff;
+}
+.title {
+  text-align: center;
+  margin: 30px auto;
+  width: 845px;
+  font-size: 20px;
+  font-weight: 900;
+}
+.content {
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 845px;
+}
+.content .input {
+  padding-bottom: 20px;
+  margin-left: 20px;
+  position: relative;
+  border-bottom: 2px solid #ececed;
+  width: 770px;
+}
+.content .input input {
+  padding: 10px 15px;
+  border: 2px solid #ececed;
+  border-radius: 20px;
+  width: 518px;
+  height: 20px;
+  outline: none;
+}
+.content .input .btn {
+  cursor: pointer;
+  position: absolute;
+  right: 162px;
+  top: 0;
+  width: 42px;
+  height: 42px;
+  background-color: #3594fd;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+}
+.content .input .btn p {
+  font-size: 20px;
+  color: #fff;
+}
+.content .input .btn:hover {
+  opacity: 0.6;
+}
+.content .mission {
+  margin-left: 18px;
+  margin-top: 20px;
+  width: 770px;
+}
+.content .mission table .fir {
+  width: 180px;
+  height: 65px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #ececed;
+}
+.content .mission table .sec {
+  width: 450px;
+  height: 65px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #ececed;
+}
+.content .mission table .tir {
+  width: 135px;
+  height: 65px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #ececed;
+}
+.content .mission table .tir .over {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background-color: #60bb35;
+  color: #fff;
+}
+.content .mission table .tir .del {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background-color: #f66162;
+  color: #fff;
+}

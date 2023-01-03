@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //生成器是一种特别的函数，与其他函数完全不同
+        function * gen(){
+            console.log('1');
+            yield '第二步'
+            console.log('2');
+            yield '第三步'
+            console.log('3');
+        }
+        let iterator = gen();
+        console.log(iterator.next('第一步'));
+        console.log(iterator.next());
+    </script>
+</body>
+</html>

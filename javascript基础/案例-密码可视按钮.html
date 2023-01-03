@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            position: relative;
+            margin: 100px auto;
+            width: 500px;
+        }
+        .pass{
+            border: 0ch;
+            border-bottom: 1px solid black;
+            outline: none;
+        }
+        .butt{
+            position: absolute;
+            top: 1px;
+            right: 310px;
+            width: 25px;
+            height: 25px;
+            border: 3px solid black;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <button class="butt" id="btn">开</button>
+        <label for="psd"></label>
+        <input type="password" id="psd" class="pass">
+    </div>
+    <script>
+        let btn = document.getElementById('btn');
+        let psd = document.getElementById('psd');
+        let flag=0;
+        btn.onclick = function (){
+            if(flag==0){
+                flag=1;
+                btn.innerText='关';
+                psd.type='text';
+            }
+            else{
+                flag=0;
+                btn.innerText='开';
+                psd.type='password';
+            }
+        }
+    </script>
+</body>
+</html>

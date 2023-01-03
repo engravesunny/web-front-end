@@ -1,0 +1,37 @@
+{
+  "id": "3604758",
+  "name": "111",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1010126",
+      "name": "错号",
+      "font_class": "cuohao",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "5387519",
+      "name": "对号",
+      "font_class": "duihao",
+      "unicode": "eaf1",
+      "unicode_decimal": 60145
+    },
+    {
+      "icon_id": "31392872",
+      "name": "业绩管理",
+      "font_class": "yejiguanlibeifenfeijianbian",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "2967038",
+      "name": "操作-退格",
+      "font_class": "caozuo-tuige",
+      "unicode": "e714",
+      "unicode_decimal": 59156
+    }
+  ]
+}

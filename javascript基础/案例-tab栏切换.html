@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            margin: 100px auto;
+            width: 600px;
+            height: 300px;
+            background-color: pink;
+        }
+        ul{
+            width: 600px;
+            background-color: skyblue;
+        }
+        li{
+            width: 120px;
+            height: 30px;
+            float: left;
+            text-align: center;
+            line-height: 30px;
+            background-color: skyblue;
+        }
+        .item{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li style="background-color: red;">商品信息</li>
+            <li>规格信息</li>
+            <li>价格信息</li>
+            <li>发货地</li>
+            <li>其他</li>
+        </ul>
+        <div class="item" style="display: block;">商品信息</div>
+        <div class="item">规格信息</div>
+        <div class="item">价格信息</div>
+        <div class="item">发货地</div>
+        <div class="item">其他</div>
+    </div>
+    <script>
+        let lis = document.querySelectorAll('li');
+        let items=document.querySelectorAll('.item');
+        for(let j=0;j<lis.length;j++){
+            lis[j].setAttribute('index',j);
+            lis[j].onclick= function(){
+                for(let i=0;i<lis.length;i++){
+                    lis[i].style.backgroundColor='skyblue'
+                }
+                lis[j].style.backgroundColor='red';
+                let index=lis[j].getAttribute('index');
+                for(let k=0;k<items.length;k++){
+                    items[k].style.display='none';
+                }
+                items[index].style.display='block'
+            }
+        }
+    </script>
+</body>
+</html>

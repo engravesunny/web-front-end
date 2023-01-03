@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <script src="static/vue/vue.js"></script>
+    <link rel="stylesheet" href="static/element/element-ui/lib/theme-chalk/index.css">
+    <script src="static/element/element-ui/lib/index.js"></script>
+    <style>
+        .el-row {
+            margin-bottom: 20px;
+        }
+
+        .el-col {
+            border-radius: 4px;
+        }
+
+        .bg-purple-dark {
+            background: #99a9bf;
+        }
+
+        .bg-purple {
+            background: #d3dce6;
+        }
+
+        .bg-purple-light {
+            background: #e5e9f2;
+        }
+
+        .grid-content {
+            border-radius: 4px;
+            min-height: 36px;
+        }
+
+        .row-bg {
+            padding: 10px 0;
+            background-color: #f9fafc;
+        }
+    </style>
+    <style>
+        .el-header,
+        .el-footer {
+            background-color: #B3C0D1;
+            color: #333;
+            text-align: center;
+            line-height: 60px;
+        }
+
+        .el-aside {
+            background-color: #D3DCE6;
+            color: #333;
+            text-align: center;
+            line-height: 200px;
+        }
+
+        .el-main {
+            min-width: 500px;
+            background-color: #E9EEF3;
+            color: #333;
+            text-align: center;
+            line-height: 55px;
+        }
+
+        .el-button {
+            width: 100px;
+        }
+
+        body > .el-container {
+            margin-bottom: 40px;
+        }
+
+        .el-container:nth-child(5) .el-aside,
+        .el-container:nth-child(6) .el-aside {
+            line-height: 260px;
+        }
+
+        .el-container:nth-child(7) .el-aside {
+            line-height: 320px;
+        }
+
+        .clearfix {
+            width: 430px;
+            text-align: right;
+            margin: 0 auto;
+            font-size: 50px;
+            font-weight: bold;
+            min-height: 110px;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .clearfix span {
+            word-break: normal;
+            width: auto;
+            display: block;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            overflow: hidden;
+        }
+
+        .debug {
+            width: 430px;
+            text-align: right;
+            margin: 0 auto;
+            font-size: 20px;
+            font-weight: bold;
+            min-height: 110px;
+            line-height: 35px;
+        }
+
+        .debug span {
+            width: 100%;
+            word-break: normal;
+            width: auto;
+            display: block;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+<div id="calculator">
+    <el-container>
+        <el-header>计算器</el-header>
+        <el-main @@keyup=>
+            <el-card class="box-card" style="width: 500px; margin: 0 auto;">
+                <div slot="header" class="clearfix">
+                    <span>{{resultMsg}}</span>
+                </div>
+                <el-row :gutter="24">
+                    <el-col :span="24">
+                        <el-button type="warning" @click="clear">C</el-button>
+                        <el-button type="warning" @click="del">Del</el-button>
+                        <el-button type="warning" @click="">占位按钮</el-button>
+                        <el-button type="warning" @click="">占位按钮</el-button>
+                    </el-col>
+                    <el-col :span="24">
+                        <el-button type="warning" @click="input('(')">(</el-button>
+                        <el-button type="warning" @click="input(')')">)</el-button>
+                        <el-button type="warning" @click="input('%')">%</el-button>
+                        <el-button type="warning" @click="input('/')">/</el-button>
+                    </el-col>
+                    <el-col :span="24">
+                        <el-button type="primary" @click='input(7)'>7</el-button>
+                        <el-button type="primary" @click='input(8)'>8</el-button>
+                        <el-button type="primary" @click='input(9)'>9</el-button>
+                        <el-button type="warning" @click="input('*')">*</el-button>
+                    </el-col>
+                    <el-col :span="24">
+                        <el-button type="primary" @click='input(4)'>4</el-button>
+                        <el-button type="primary" @click='input(5)'>5</el-button>
+                        <el-button type="primary" @click='input(6)'>6</el-button>
+                        <el-button type="warning" @click="input('-')">-</el-button>
+                    </el-col>
+                    <el-col :span="24">
+                        <el-button type="primary" @click='input(1)'>1</el-button>
+                        <el-button type="primary" @click='input(2)'>2</el-button>
+                        <el-button type="primary" @click='input(3)'>3</el-button>
+                        <el-button type="warning" @click="input('+')">+</el-button>
+                    </el-col>
+                    <el-col :span="24">
+                        <el-button type="primary" @click='input(0)' style="width: 215px;">0</el-button>
+                        <el-button type="primary" @click='input(".")'>.</el-button>
+                        <el-button type="warning" @click="calc">=</el-button>
+                    </el-col>
+                </el-row>
+
+            </el-card>
+
+        </el-main>
+    </el-container>
+</div>
+</body>
+<script>
+    const symbol = ['+', '-', '*', '/', '(', ')', '.', '%']
+    new Vue({
+        el: '#calculator',
+        data: {
+            resultMsg: '', //计算器显示,
+            isAllowed:true,
+        },
+        methods: {
+            clear() {
+                this.isAllowed = true
+                this.resultMsg = ''
+            },
+            del() {
+                if(!isAllowed){
+                    return
+                }
+                this.resultMsg = this.resultMsg.substring(0, this.resultMsg.length - 1)
+            },
+            input(button) {
+                if(!isAllowed){
+                    return
+                }
+                //第一个字符不能输的
+                if ((button === 0 || button === '.' || button === '+' || button === '*' || button === '/'
+                    || button === '%' || button === ')') && this.resultMsg === '') {
+                    return
+                }
+                //不能连着输入运算符
+                if (symbol.includes(button) && symbol.includes(this.resultMsg.charAt(this.resultMsg.length - 1))) {
+                    return
+                }
+                this.resultMsg += button
+            },
+            calc() {
+                if(!isAllowed){
+                    return
+                }
+                let res
+                try {
+                    res = eval(this.resultMsg);
+                    if (res === Infinity || res === -Infinity) {
+                        alert('除数不能为0')
+                        this.clear()
+                        return
+                    }
+                } catch (e) {
+                    alert("输入错误")
+                    this.resultMsg = ''
+                    return;
+                }
+                this.resultMsg = "按C继续\n"+res.toString()
+                this.isAllowed = false
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,84 @@
+@import url(./base.less);
+@import url(./normalize);
+
+@resize:37.5rem;
+
+body{
+    background-color: #F0F0F0;
+}
+//主体部分
+.content{
+    width: 100px;
+    height: 100px;
+
+}
+.main{
+    margin-bottom: (55 / @resize);
+    .banner{
+        width: (375 / @resize);
+        height: (160 / @resize);
+        background-image: url(../uploads/banner_1.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .title{
+        margin:(10 / @resize) (15 / @resize) (14 / @resize);
+        font-size: 14px;
+        color: #3C3C3C;
+        letter-spacing: 0.01px;
+    }
+    .content{
+        .fir{
+            margin-bottom: 10px;
+            width: (375 / @resize);
+            height: (250 / @resize);
+            background-color: #fff;
+        }
+        .sec{
+            margin-bottom: 10px;
+            width: (375 / @resize);
+            height: (250 / @resize);
+            background-color: #fff;
+        }
+        .trd{
+            margin-bottom: 10px;
+            width: (375 / @resize);
+            height: (250 / @resize);
+            background-color: #fff;
+        }
+    }
+}
+
+
+//底部部分
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: (50 / @resize);
+    background-color: #FECA49;
+    .left,
+    .right,
+    .mid{
+        width: (30 / @resize);
+        height: (40 / @resize);
+        // background-color: #fff;
+        text-align: center;
+    }
+    .iconfont{
+        font-size: (25 / @resize);
+        color: #D78B09;
+    }
+    p{
+        font-size: (11 / @resize);
+        color: #D78B09;
+    }
+    a:hover span,
+    a:hover p{
+        color: #fff;
+    }
+}

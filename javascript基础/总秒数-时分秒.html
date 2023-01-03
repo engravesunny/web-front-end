@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 总秒数转换为时分秒
+        function toHMS(num){
+            let hour=0;
+            let min=0;
+            let sec=0;
+            while(num>0){
+                if(num>=3600){
+                    hour=num/3600%24;
+                    num=num%3600;
+                    continue;
+                }
+                if(num>=60){
+                    min=num/60%60;
+                    num=num%60;
+                    continue;
+                }
+                sec=num;
+                num=0;
+            }
+            console.log(`${hour}时${min}分${sec}秒`);
+        }
+        toHMS(3666);
+    </script>
+</body>
+</html>

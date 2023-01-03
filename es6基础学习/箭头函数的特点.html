@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <script>
+        //1.箭头函数中的this是静态的，为函数声明时所在的作用域的this
+        //比如
+        // let box = document.querySelectorAll('div');
+        // box[0].addEventListener('click',function(){
+        //     console.log(this);
+        //     this.style.background = 'red';
+        //     //这个是box[0]作用域下的this
+        // })
+        // box[1].addEventListener('click',()=>{
+        //     console.log(this);
+        //     this.style.background = 'red';
+        //     //这个是function声明时作用域的this
+        // })
+
+        //2.箭头函数可以简写
+        //1) 省略小括号，变量只有一个
+        let add = n => {
+            return n + n ;
+        }
+        console.log(add(9));
+        //2) 省略花括号，函数体只有一条语句，且简写时返回值就是这条语句的值
+
+        let adds = (a,b) => a*b;
+        console.log(adds(2,3));
+
+        //3.不能作为构造实例化对象
+        // let person = (name,age) => {
+        //     this.name = name;
+        //     this.age = age;
+        // }
+        // let aa = new person('xiao',18);
+        // console.log(aa);
+
+        //4.不能使用arguments变量
+        // let num = (a,b,c) =>{
+        //     console.log(arguments);
+        // }
+        // num(1,2,3);
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        table td{
+            border: 3px solid black ;
+        }
+        table{
+            border: 3px solid black ;
+        }
+        table tr{
+            border: 3px solid black ;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let name=prompt('请输入商品名称')
+        let price=prompt('请输入商品价格')
+        let num=prompt('请输入商品数量')
+        let sum=Number(price)*Number(num)
+        let address=prompt('请输入收货地址')
+        document.write(`
+        
+        <table>
+        <caption><h2>订单付款确认页面</h2></caption>
+        <tr>
+            <td>商品名称</td>
+            <td>商品价格</td>
+            <td>商品数量</td>
+            <td>总价</td>
+            <td>收货地址</td>
+        </tr>
+        <tr>
+            <td>${name}</td>
+            <td>${price}</td>
+            <td>${num}</td>
+            <td>${sum}</td>
+            <td>${address}</td>
+        </tr>
+    </table>
+        
+        `)
+
+    </script>
+</body>
+</html>

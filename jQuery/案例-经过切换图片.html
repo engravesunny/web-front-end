@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            margin: 50px auto;
+            width: 500px;
+            height: 400px;
+            background-color: pink;
+        }
+        .box ul{
+            width: 100px;
+            height: 400px;
+            float: left;
+            background-color: red;
+        }
+        .box ul li{
+            float: left;
+            width: 100px;
+            height: 98px;
+            background-color: skyblue;
+            text-align: center;
+            line-height: 100px;
+            border-bottom: 2px solid green ;
+        }
+        .box .imgBox{
+            float: right;
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li><img src="../css进阶/19.png" alt="" width="100px" height="100px"></li>
+            <li><img src="../css进阶/17.png" alt="" width="100px" height="100px"></li>
+            <li><img src="../css进阶/15.png" alt="" width="100px" height="100px"></li>
+            <li><img src="../css进阶/14.png" alt="" width="100px" height="100px"></li>
+        </ul>
+        <div class="imgBox">
+            <img src="../css进阶/19.png" alt="" width="400px" height="400px">
+        </div>
+    </div>
+    <script>
+        $('.box').find('li').hover(function(){
+            $('.imgBox').find('img').prop('src',`${$(this).find('img').prop('src')}`);
+        })
+    </script>
+</body>
+</html>

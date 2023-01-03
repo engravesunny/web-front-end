@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            perspective: 1000px;
+        }
+        .box{
+            position: relative;
+            transform-style: preserve-3d;
+            margin: 200px auto;
+            width: 300px;
+            height: 300px;
+            /* background-color: pink; */
+            transition: all 3s;
+        }
+        .front{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background-image: url(./13.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: translateZ(150px);
+        }
+        .back{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background-image: url(./14.png);
+            transform:rotateY(180deg) ;
+            background-size: contain;
+            transform: translateZ(-150px);
+            
+            background-repeat: no-repeat;
+        }
+        .left{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background-image: url(./15.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: translateX(-150px) rotateY(-90deg);
+        }
+        .right{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background-image: url(./16.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: translateX(150px) rotateY(90deg);
+
+        }
+        .top{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background-image: url(./17.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: translateY(150px) rotateX(-90deg);
+        }
+        .bottom{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background-image: url(./18.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: translateY(-150px) rotateX(90deg);
+        }
+        .box:hover{
+            transform: rotateX(270deg) rotateY(270deg) rotateZ(270deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="front"></div>
+        <div class="back"></div>
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
+    </div>
+</body>
+</html>

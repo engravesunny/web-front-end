@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .good{
+            width: 300px;
+            height: 300px;
+            background-image: url(../css进阶/14.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .mirror{
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+            opacity: .5;
+            cursor: move;
+            z-index: 999;
+        }
+        .big{
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 300px;
+            width: 300px;
+            height: 300px;
+            background-image: url(../css进阶/14.png);
+            background-repeat: no-repeat;
+            background-size: 1800px;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <div class="good">
+        <div class="mirror"></div>
+    </div>
+    <div class="big"></div>
+
+
+    <script>
+        //获取元素
+        let good = document.querySelector('.good');
+        let mirror = document.querySelector('.mirror');
+        let big = document.querySelector('.big');
+
+        //注册事件
+        good.addEventListener('mouseover',function(){
+            mirror.style.display = 'block';
+            big.style.display = 'block';
+        })
+        good.addEventListener('mousemove',function(e){
+            
+            let x = e.pageX - good.offsetLeft;
+            let y = e.pageY - good.offsetTop;
+            let mirrorX = x - mirror.offsetWidth/2;
+            let mirrorY = y - mirror.offsetHeight/2;
+            if(mirrorX<=0){
+                mirrorX = 0;
+            }
+            if(mirrorY<=0){
+                mirrorY = 0;
+            }
+            if(mirrorX>=good.offsetWidth - mirror.offsetWidth){
+                mirrorX = good.offsetWidth - mirror.offsetWidth;
+            }
+            if(mirrorY>=good.offsetHeight - mirror.offsetHeight){
+                mirrorY = good.offsetHeight - mirror.offsetHeight;
+            }
+            mirror.style.left = mirrorX + 'px';
+            mirror.style.top = mirrorY + 'px';
+            big.style.backgroundPositionX = -( (big.offsetWidth/mirror.offsetWidth)*mirror.offsetLeft ) + 'px';
+            big.style.backgroundPositionY = -( (big.offsetHeight/mirror.offsetHeight)*mirror.offsetTop ) + 'px';
+        })
+        good.addEventListener('mouseout',function(){
+            mirror.style.display = 'none';
+            big.style.display = 'none';
+        })
+    </script>
+</body>
+</html>

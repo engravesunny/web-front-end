@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            margin: 50px auto;
+            width: 600px;
+            height: 200px;
+            border: 3px solid black;
+            overflow: hidden;
+                
+        }
+        .box ul{
+            width: 2000px;
+            animation: move 5s linear 0s  infinite;
+        }
+        .box li{
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-size: cover;
+        }
+        .box li:nth-child(1){
+            background-image: url(./12.png);
+        }
+        .box li:nth-child(2){
+            background-image: url(./13.png);
+        }
+        .box li:nth-child(3){
+            background-image: url(./14.png);
+        }
+        .box li:nth-child(4){
+            background-image: url(./15.png);
+        }
+        .box li:nth-child(5){
+            background-image: url(./16.png);
+        }
+        .box li:nth-child(6){
+            background-image: url(./17.png);
+        }
+        .box li:nth-child(7){
+            background-image: url(./18.png);
+        }
+        .box li:nth-child(8){
+            background-image: url(./12.png);
+        }
+        .box li:nth-child(9){
+            background-image: url(./13.png);
+        }
+        .box li:nth-child(10){
+            background-image: url(./14.png);
+        }
+        @keyframes move {
+            to{
+                transform: translateX(-1400px);
+            }
+        }
+        .box:hover ul{
+            animation-play-state: paused;
+        }
+
+        .box3{
+            display: flex;
+            justify-content: space-around;
+            width: 600px;
+            height: 200px;
+            margin: 50px auto;
+            border: 3px solid black;
+        }
+        .box3 li{
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1.轮播图复习 -->
+    <div class="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <!-- 2.动画效果复习 不重要 先不复习-->
+    <div class="box2">
+
+    </div>
+
+    <!-- 3.flex弹簧盒子布局 -->
+    <div class="box3">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

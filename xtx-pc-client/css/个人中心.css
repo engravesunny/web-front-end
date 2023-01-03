@@ -1,0 +1,323 @@
+/* 个人中心页面的样式表 */
+.box{
+    height: 1432px;
+    background-color: #f6f6f6;
+    margin-bottom: 0;
+}
+
+.navigation{
+    margin-top: 20px;
+    margin-bottom: 292px;
+    width: 224px;
+	height: 1120px;
+	background-color: #ffffff;
+}
+.box1{
+    width: 224px;
+    height: 456px;
+    padding: 37px 108px 26px 52px;
+    border-bottom: 2px solid #f4f4f4;
+}
+
+.box1 dd a{
+    /* margin-bottom: 27px; */
+    font-family: PingFangSC-Regular;
+	font-size: 14px;
+	font-weight: normal;
+	font-stretch: normal;
+	/* line-height: 36px; */
+	letter-spacing: 0px;
+}
+
+.box1 dt{
+    margin-bottom: 20px;
+    font-family: PingFangSC-Regular;
+	font-size: 16px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #333333;
+}
+
+.box1 dd a:hover{
+    color: #5cb99e;
+    list-style: decimal;
+}
+.box1 dd{
+    margin-bottom: 18px;
+}
+.box1 dd:hover{
+    color: #5cb99e;
+    list-style: circle;
+}
+.box2{
+    width: 224px;
+    height: 274px;
+    padding: 24px 107px 24px 52px;
+    border-bottom: 2px solid #f4f4f4;
+}
+.box2 dt{
+    margin-bottom: 20px;
+    font-family: PingFangSC-Regular;
+	font-size: 16px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #333333;
+}
+
+.box2 dd{
+    margin-bottom: 18px;
+}
+
+.box2 dd a:hover{
+    color: #5cb99e;
+    list-style: decimal;
+}
+
+.box2 dd a{
+    /* margin-bottom: 27px; */
+    font-family: PingFangSC-Regular;
+	font-size: 14px;
+	font-weight: normal;
+	font-stretch: normal;
+	/* line-height: 36px; */
+	letter-spacing: 0px;
+}
+
+.box3{
+    height: 189px;
+    width: 224px;
+    padding: 27px 100px 24px 52px;
+    border-bottom: 2px solid #f4f4f4;
+}
+
+.box3 dt{
+    margin-bottom: 20px;
+    font-family: PingFangSC-Regular;
+	font-size: 16px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #333333;
+}
+
+.box3 dd{
+    margin-bottom: 10px;
+}
+
+.box3 dd a:hover{
+    color: #5cb99e;
+    list-style: decimal;
+}
+
+.box3 dd a{
+    /* margin-bottom: 27px; */
+    font-family: PingFangSC-Regular;
+	font-size: 14px;
+	font-weight: normal;
+	font-stretch: normal;
+	/* line-height: 36px; */
+	letter-spacing: 0px;
+}
+
+.box4{
+    height: 189px;
+    /* width: 224px; */
+    padding: 27px 100px 24px 52px;
+    /* border-bottom: 2px solid #f4f4f4; */
+}
+
+.box4 dt{
+    margin-bottom: 20px;
+    font-family: PingFangSC-Regular;
+	font-size: 16px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #333333;
+}
+
+.box4 dd{
+    margin-bottom: 10px;
+}
+
+.box4 dd a:hover{
+    color: #5cb99e;
+    list-style: decimal;
+}
+
+.box4 dd a{
+    /* margin-bottom: 27px; */
+    font-family: PingFangSC-Regular;
+	font-size: 14px;
+	font-weight: normal;
+	font-stretch: normal;
+	/* line-height: 36px; */
+	letter-spacing: 0px;
+}
+
+.Vcenter{
+    width: 996px;
+}
+.Vcenter .user{
+    margin-top: 20px;
+    width: 996px;
+	height: 132px;
+	background-color: #23b698;
+}
+.Vcenter .order{
+    margin-top: 20px;
+    width: 996px;
+	height: 374px;
+	background-color: #fff;
+}
+
+.Vcenter .collect{
+    margin-top: 20px;
+    width: 996px;
+	height: 408px;
+	background-color: #fff;
+}
+
+.Vcenter .foot{
+    margin-top: 20px;
+    width: 996px;
+	height: 408px;
+	background-color: #fff;
+}
+
+.Vcenter .user .userimg .img1{
+    float: left;
+    margin-top: 23px;
+    margin-left: 59px;
+    width: 85px;
+    height: 85px;
+    background-image: url(../uploads/avatar_1.png);
+    background-size: contain;
+}
+.Vcenter .user .userimg .name{
+    font-size: 18px;
+    color: #fff;
+    margin-left: 26px;
+    height: 132px;
+    line-height: 132px;
+    float: left;
+}
+.Vcenter .user .serve li{
+    margin: 35px 53px 34px 53px;
+    width: 64px;
+    height: 64px;
+    float:right;
+    background-color: #fff;
+
+}
+.Vcenter .user .serve li .img1{
+    width: 22px;
+	height: 32px;
+    background-image: url(../images/sprites.png);
+    background-position: 0 0;
+}
+.Vcenter .user .serve li .img2{
+    width: 32px;
+	height: 29px;
+}
+.Vcenter .user .serve li .img3{
+    width: 32px;
+	height: 29px;
+}
+.Vcenter .user .serve li span{
+    text-align: center;
+    margin: 0 auto;
+    font-family: PingFangSC-Regular;
+	font-size: 16px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #333333;
+}
+
+.Vcenter .order .top .fl{
+    margin-top: 21px;
+    margin-left: 12px;
+    font-size: 19px;
+    color: #333333;
+}
+.Vcenter .order .top .fr{
+    margin-top: 24px;
+    margin-right: 13px;
+    
+}
+.Vcenter .order .top .fr a{
+    color: #999999;
+}
+
+.Vcenter .order .cont .fir{
+    margin-top: 20px;
+    margin-left: 12px;
+    float: left;
+    width: 971px;
+	height: 137px;
+    background-color: pink;
+}
+
+.Vcenter .order .cont .sec{
+    margin-top: 20px;
+    margin-left: 12px;
+    float: left;
+    width: 971px;
+	height: 137px;
+    background-color: red;
+}
+
+.Vcenter .order .cont .fir .box1{
+    float: left;
+    width: 591px;
+    height: 137px;
+    background-color: green;
+}
+.Vcenter .order .cont .fir .box2{
+    float: left;
+    width: 196px;
+    height: 137px;
+    background-color: skyblue;
+}
+
+.Vcenter .order .cont .fir .box3{
+    float: left;
+    width: 181px;
+    height: 137px;
+    background-color: greenyellow;
+}
+.Vcenter .order .cont .sec .box1{
+    float: left;
+    width: 591px;
+    height: 137px;
+    background-color: green;
+}
+.Vcenter .order .cont .sec .box2{
+    float: left;
+    width: 196px;
+    height: 137px;
+    background-color: skyblue;
+}
+
+.Vcenter .order .cont .sec .box3{
+    float: left;
+    width: 181px;
+    height: 137px;
+    background-color: greenyellow;
+}
+.Vcenter .collect .top .fl{
+    margin-top: 21px;
+    margin-left: 12px;
+    font-size: 19px;
+    color: #333333;
+}
+
+.Vcenter .foot .top .fl{
+    margin-top: 21px;
+    margin-left: 12px;
+    font-size: 19px;
+    color: #333333;
+}

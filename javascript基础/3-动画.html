@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            position: absolute;
+            left: 0;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+        span{
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn1">前进</button>
+    <button class="btn2">后退</button>
+    <div class="box"></div>
+    <span></span>
+    <script>
+        let span = document.querySelector('span');
+        let box = document.querySelector('.box');
+        let btn1 = document.querySelector('.btn1');
+        let btn2 = document.querySelector('.btn2');
+        let animate = function(obj , target , callback){
+            obj.timer = setInterval(function(){
+                if(obj.offsetLeft == target){
+                clearInterval(obj.timer);
+                if(callback){
+                    callback();
+                }
+            }
+                let step = (target -obj.offsetLeft)/10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }, 15)
+        }
+        btn1.addEventListener('click',function(){
+            animate(box, 600 ,function(){
+                box.style.backgroundColor = 'black';
+            });
+            animate(span,400);
+        })
+        btn2.addEventListener('click',function(){
+            animate(box, 0 ,function(){
+                box.style.backgroundColor = 'white';
+            });
+            animate(span, 100);
+        })
+    </script>
+</body>
+</html>

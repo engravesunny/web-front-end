@@ -1,0 +1,52 @@
+window.addEventListener('load',function(){
+    let box = new Vue({
+        el:'.box',
+        data:{
+            arr:[
+                '琪亚娜',
+                '芽衣',
+                '布洛妮娅'
+            ],
+            addData:'',
+            isShow:true
+        },
+        methods: {
+            add:function(){
+                if(this.addData=='')
+                {
+                    alert('你没有输入内容！！');
+                    return
+                }
+                this.arr.push(this.addData)
+                this.addData=''
+                if(this.arr.length==0){
+                    this.isShow=false;
+                }
+                else{
+                    this.isShow=true
+                }
+            },
+            remove(index){
+                this.arr.splice(index,1);
+                if(this.arr.length==0){
+                    this.isShow=false;
+                }
+                else{
+                    this.isShow=true
+                }
+            },
+            clear(){
+                this.arr.splice(0,this.arr.length);
+                if(this.arr.length==0){
+                    this.isShow=false;
+                }
+                else{
+                    this.isShow=true
+                }
+            },
+            over:function(){
+                
+            }
+        }
+    })
+})

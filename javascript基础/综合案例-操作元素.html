@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            position: relative;
+            line-height: 20px;
+        }
+        .box input{
+            display: inline;
+            width: 100px;
+            height: 16px;
+            border: 0;
+            border-bottom: 2px solid black;
+            color: pink;
+            outline: none;
+        }
+        .box button{
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: 20px;
+        }
+        .display1{
+            display: none;
+        }
+        .display2{
+            display: inline;
+        }
+        .ad{
+            width: 100%;
+            height: 30px;
+            background: #000;
+            color: #fff;
+        }
+        .downlist{
+            position: relative;
+            width: 300px;
+            height: 30px;
+            line-height: 30px;
+            background-color: black;
+            color: #fff;
+        }
+        .box1{
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="ad">
+        这是广告
+        <button id="close">关闭广告</button>
+    </div>
+    <div class="box">
+    <label for="账户">账户</label>
+    <input type="text" name="账户" id="acc" value="用户名/账号">
+    </div>
+    <div class="box">
+        <label for="密码">密码</label>
+        <input type="password" name="密码" id="psd" value="密码">
+        <button id="psd1">睁</button>
+    </div>
+    <button id="deng">开/关灯</button>
+    <div class="downlist">
+        下拉菜单
+        <div class="box1">
+            这是下拉菜单
+        </div>
+    </div>
+
+
+    <script>
+        let box = document.querySelectorAll('.box');
+        let body = document.querySelector('body');
+        let btn = document.querySelector('#deng');
+        let acc = document.getElementById('acc');
+        let psd = document.querySelector('#psd');
+        let close = document.querySelector('#close');
+        let ad = document.querySelector('.ad');
+        let dl=document.querySelector('.downlist');
+        let dls=document.querySelector('.box1');
+        // 广告部分
+        close.onclick = function(){
+            ad.className='display1'
+        }
+        
+
+        // 密码框部分
+        let flag2 = 1
+        let btn1 = document.querySelector('#psd1');
+        btn1.className='display1';
+        btn1.onclick = function(){
+            if(flag2==1){
+            psd.type='text';
+            btn1.innerHTML='闭';
+            flag2=0;
+            }
+            else{
+            psd.type='password';
+            btn1.innerHTML='睁';
+            flag2=1;
+            }
+        }
+        if(psd.value=='密码')
+        psd.type = 'text';
+        psd.onfocus = function(){
+            btn1.className='display2'
+            psd.style.borderBottomColor='pink'
+            if(psd.value=='密码'){
+                psd.value='';
+            psd.type = 'password';
+            psd.style.color = 'black';
+            }
+        }
+        psd.onblur = function(){
+            psd.style.borderBottomColor='black'
+            if(psd.value.length == 0){
+                psd.value='密码';
+                psd.style.color='pink';
+                psd.type='text';
+            }
+        }
+        
+        // 账号框部分
+        acc.onfocus = function(){
+            if(acc.value=='用户名/账号'){
+                acc.value='';
+                acc.style.color='black';
+            }
+            acc.style.borderBottomColor='pink';
+        } 
+        acc.onblur = function(){
+            if(acc.value==''){
+                acc.value='用户名/账号';
+                acc.style.color='pink'
+            }
+            acc.style.borderBottomColor='black';
+        }
+
+
+        // 开关灯部分
+        let flag = 1;
+        btn.onclick = function(){
+            if(flag== 1){
+                body.style.backgroundColor= 'black';
+                flag=0;
+                for(let i=0;i<box.length;i++){
+                    box[i].style.color = 'white';
+                }
+            }
+            else {
+                body.style.backgroundColor= 'white';
+                flag=1;
+                for(let i=0;i<box.length;i++){
+                    box[i].style.color = 'black';
+                }
+            }
+        }
+        // 下拉菜单
+        dls.className='display1';
+        dl.onmouseover = function(){
+            dls.className='box1 display2'
+        }
+        dl.onmouseout = function(){
+            dls.className='box1 display1';
+        }
+
+
+    </script>
+</body>
+</html>

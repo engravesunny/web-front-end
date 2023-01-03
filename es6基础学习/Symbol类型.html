@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //symbol是一种独一无二的类型
+        //是为了解决es5属性名都为字符串避免重复的问题
+        let name = Symbol('琪亚娜');
+        let name1 = Symbol('琪亚娜');
+
+
+        console.log(name===name1);
+        //1.false，虽然他们的值是相同的，但symbol使他们独一无二
+
+
+
+        //2.symbol不能与其他类型进行计算
+        //console.log(name+name1);//  报错 Cannot convert a Symbol value to a number
+
+
+
+        //3.Symbol('')里可以写对其的描述,并且其描述可以用.description取得
+        console.log(name.description);//琪亚娜
+
+
+
+        //4.由于每一个 Symbol 值都是不相等的，
+        //这意味着 Symbol 值可以作为标识符，
+        //用于对象的属性名，就能保证不会出现同名的属性。
+        //这对于一个对象由多个模块构成的情况非常有用，
+        //能防止某一个键被不小心改写或覆盖。
+        let mySymbol = Symbol();
+        //
+        let aaa = Symbol();
+        
+        //let a={}
+        //a[mySymbol]='hello!'//第一种写法
+        
+        let a = {
+            [mySymbol]:'hello!'   //第二种写法
+        }
+        console.log(a.mySymbol);//undefined
+        console.log(a[mySymbol]);//hello!
+        //注意，Symbol 值作为对象属性名时，不能用点运算符。
+
+
+        let s = Symbol();
+        let a1 = {
+            // [s]:function(){
+            //     console.log(arguments);
+            // }
+            [s](){
+                console.log(arguments);   //增强的对象写法,更简洁点
+            }
+        }
+        a1[s](1,2,3,4);
+
+
+        //5.Symbol还可以用于定义一组常量，保证这组常量的值都是不相等的
+        const log={};
+        log.level = {
+            DEBUG:Symbol('debug'),
+            INFO:Symbol('info'),
+            WARN:Symbol('warn')
+        }
+        console.log(log.level.DEBUG,'debug message');
+        console.log(log.level.INFO, 'info message');
+        //下面是一个例子
+        let COLOR_RED = Symbol();
+        let COLOR_GREEN = Symbol();
+
+        let getColor = function(color){
+            switch(color){
+                case COLOR_RED:
+                    return COLOR_RED;
+                case COLOR_GREEN:
+                    return COLOR_GREEN;
+                default:
+                throw new Error('Undefined color');
+            }
+        }
+        console.log(getColor(COLOR_RED));
+        //这样所有常量的值就不会相同，switch会按设计的方式运行
+
+
+
+        //6.Symbol.for()与Symbol()的区别
+        let s1 = Symbol('foo');
+        let s2 = Symbol('foo');
+        s1 === s2 //false
+        let s3 = Symbol.for('foo');
+        let s4 = Symbol.for('foo');
+        s3 === s4 //true
+        //区别：Symbol()每次都会新建一个Symbol值,
+        //而Symbol.for会会先检查给定的key是否已经存在，
+        //如果不存在才会新建一个值
+        //比如 Symbol('cat')调用30次会新建30个不同的Symbol值
+        //而调用30次Symbol.for('cat')会返回同一个值
+
+        //7.内置属性
+        //isConcatSpreadable在数组合并时用于操作数组是否展开 
+        let aa1 = ['1','2','3'];
+        let aa2 = ['1','2','3'];
+        aa2[Symbol.isConcatSpreadable] = false;
+        console.log(aa1.concat(aa2));
+    </script>
+</body>
+</html>

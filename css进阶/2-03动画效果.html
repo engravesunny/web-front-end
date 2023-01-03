@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            perspective: 1000px;
+        }
+        .box{
+            position: relative;
+            transform-style: preserve-3d;
+            margin: 200px auto;
+            width: 100px;
+            height: 100px;
+            /* background-color: pink; */
+            /* transition: all 3s; */
+            animation: 
+            /* change 3s linear 0s infinite, */
+            move 5s linear 0s infinite;
+        }
+        .front{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background-image: url(./06.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: translateZ(50px);
+        }
+        .back{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background-image: url(./07.png);
+            transform:rotateY(180deg) ;
+            background-size: contain;
+            transform: translateZ(-50px);
+            
+            background-repeat: no-repeat;
+        }
+        .left{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background-image: url(./08.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: translateX(-50px) rotateY(-90deg);
+        }
+        .right{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background-image: url(./09.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: translateX(50px) rotateY(90deg);
+
+        }
+        .top{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background-image: url(./10.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: translateY(50px) rotateX(-90deg);
+        }
+        .bottom{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background-image: url(./12.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            transform: translateY(-50px) rotateX(90deg);
+        }
+        /* .box:hover{
+            transform: rotateX(270deg) rotateY(270deg) rotateZ(270deg);
+        } */
+        @keyframes change {
+            from{
+                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            }
+            to{
+                transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            }
+        }
+        @keyframes move {
+            0%{
+                transform:translateX(0px) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            }
+            25%{
+                transform:translateX(-400px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            }
+            50%{
+                transform:translateX(-400px) translateY(400px) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            }
+            75%{
+                transform: translateX(0px) translateY(400px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            }
+            100%{
+                transform: translateX(0px) translateY(0px) rotateX(360deg) rotateY(360deg) rotateZ(360deg) ;
+            }
+        }
+        .box:hover{
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="front"></div>
+        <div class="back"></div>
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title{
+            margin: 20px auto;
+            width: 300px;
+        }
+        .title h2{
+            display: block;
+            margin: 0 auto;
+        }
+        .box{
+            margin: 100px auto;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="title"><h2>上午好</h2></div>
+    <div class="box">
+        <img src="../css进阶/007.png" alt="" title="上午好">
+    </div>
+    <script>
+        let date=new Date();
+        let hour=date.getHours();
+        let sce = document.querySelector('h2');
+        let img = document.querySelector('img');
+        if(hour>=6&&hour<12){
+            sce.innerText='上午好';
+            img.src="../css进阶/007.png"
+            img.title='上午好'
+            alert(`上午好！`)
+        }
+        else if(hour>=12&&hour<18){
+            sce.innerText='下午好';
+            img.src="../css进阶/014.png"
+            img.title='下午好'
+            alert(`下午好！`)
+        }
+        else {
+            sce.innerText='晚上好';
+            img.src='../css进阶/18.png'
+            img.title='晚上好'
+            alert(`晚上好！`)
+        }
+        
+    </script>
+</body>
+</html>

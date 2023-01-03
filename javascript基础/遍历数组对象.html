@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .title{
+            text-align: center;
+        }
+        .bbox{
+            
+            margin: 5px auto;
+            width: 600px;
+            height: 508px;
+            border: 2px solid black;
+        }
+        .top{
+            display: flex;
+            float: left;
+            width: 600px;
+            height: 100px;
+            border-bottom: 2px solid black;
+        }
+        .top .box{
+            width: 120px;
+            height: 100px;
+            text-align: center;
+            line-height: 96px;
+            border-right: 2px solid black;
+            background-color: pink;
+        }
+        .top .box1{
+            width: 120px;
+            height: 100px;
+            text-align: center;
+            line-height: 96px;
+            border-right: 2px solid black;
+            background-color: #fff;
+        }
+        .top .box:nth-child(5){
+            border: 0;
+        }
+        .top .box1:nth-child(5){
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        let students = [
+            {name: '小明', age: 18, gender: '男', hometown: '河北省'},
+            {name: '小红', age: 19, gender: '女', hometown: '河南省'},
+            {name: '小刚', age: 17, gender: '男', hometown: '山西省'},
+            {name: '小丽', age: 18, gender: '女', hometown: '山东省'}
+    ]
+    document.write(`
+    <div class="title">
+        <h2>学生信息表</h2>
+    </div>
+    <div class="bbox">
+        <div class="top">
+            <div class="box">序号</div>
+            <div class="box">姓名</div>
+            <div class="box">年龄</div>
+            <div class="box">性别</div>
+            <div class="box">家乡</div>
+        </div>
+        <div class="top">
+            <div class="box1">1</div>
+            <div class="box1">${students[0].name}</div>
+            <div class="box1">${students[0].age}</div>
+            <div class="box1">${students[0].gender}</div>
+            <div class="box1">${students[0].hometown}</div>
+        </div>
+        <div class="top">
+            <div class="box1">2</div>
+            <div class="box1">${students[1].name}</div>
+            <div class="box1">${students[1].age}</div>
+            <div class="box1">${students[1].gender}</div>
+            <div class="box1">${students[1].hometown}</div>
+        </div>
+        <div class="top">
+            <div class="box1">3</div>
+            <div class="box1">${students[2].name}</div>
+            <div class="box1">${students[2].age}</div>
+            <div class="box1">${students[2].gender}</div>
+            <div class="box1">${students[2].hometown}</div>
+        </div>
+        <div class="top">
+            <div class="box1">4</div>
+            <div class="box1">${students[3].name}</div>
+            <div class="box1">${students[3].age}</div>
+            <div class="box1">${students[3].gender}</div>
+            <div class="box1">${students[3].hometown}</div>
+        </div>
+    </div>
+    `)
+    </script>
+
+</body>
+</html>
+

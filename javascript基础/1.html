@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            position: relative;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        // let a = 1;
+        let animate = function(obj , target , callback){
+            obj.timer = setInterval(function(){
+                if(obj.offsetLeft == target){
+                clearInterval(obj.timer);
+                if(callback){
+                    callback();
+                }
+            }
+                let step = (target -obj.offsetLeft)/10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }, 15)
+        }
+        let box = document.querySelector('.box');
+        animate(box,100);
+//         let arr = [1, 3, 5, 7];
+//         let res1 = arr.filter((item, index, arr) => item>1);
+// let res = arr.map((item, index, res1) => item * 3);
+console.log(res);
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            margin: 100px auto ;
+            width: 400px;
+            height: 600px;
+        }
+        .box table{
+            width: 400px;
+            border-collapse: collapse;
+        }
+        .box table td,
+        .box table th{
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>                                 
+    <div class="box">
+        <table>
+            <thead>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        let data = [
+            {
+                name:'李华',
+                subject:'javascript',
+                grade:'98'
+            },
+            {
+                name:'小明',
+                subject:'javascript',
+                grade:'97'
+            },
+            {
+                name:'丽丽',
+                subject:'javascript',
+                grade:'100'
+            }
+
+        ]
+        let tb = document.querySelector('tbody');
+        for(let i=0;i<data.length;i++){
+            let tr = document.createElement('tr');
+            tb.appendChild(tr);
+            for(let k in data[i]){
+                let td = document.createElement('td');
+                td.innerHTML=data[i][k];
+                tr.appendChild(td);
+            }
+            let tds = document.createElement('td');
+            tds.innerHTML = '<a href=javascript:;>删除</a>'
+            tr.appendChild(tds);
+        }
+        let as = document.querySelectorAll('a');
+        for(let i=0;i<as.length;i++){
+            as[i].onclick = function(){
+                tb.removeChild(this.parentNode.parentNode);
+            }
+        }
+    </script>
+</body>
+</html>

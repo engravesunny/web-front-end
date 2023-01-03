@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        
+        //1.set是es6新的一种数据结构，类似于数组，但set中没有重复的值，而且其本身是一个构造函数
+        let s = new Set();
+        [1,2,3,4,5,2,3,4,5].forEach(item => s.add(item));
+        console.log(s);
+        //set函数可以接受一个数组作为参数来初始化
+        const set = new Set([1,2,3,4,5,5,6,6]);
+        console.log(set);
+        const box = new Set(document.querySelectorAll('div'));
+        console.log(box);
+        //
+        //去除数组中重复的成员
+        let arr = [1,2,3,4,5,5,1,1]
+        arr = [...new Set(arr)];
+        console.log(arr);
+        console.log([...new Set('abbbcc')]);
+
+        //set内两个对象总是不相等的
+        let set1 = new Set();
+        set1.add({});
+        console.log(set1.size);
+        set1.add({});
+        console.log(set1.size);
+        //Array.from方法也可以将Set结构转为数组
+        const item1 = new Set ([1,2,3,4]);
+        const arr1 = Array.from(item1);
+        console.log(arr1);
+    </script>
+</body>
+</html>

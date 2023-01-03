@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎！！</title>
+    <style>
+        img{
+            
+            vertical-align: middle;
+        }
+        p{
+            display: block;
+            font-size: large;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        
+    </div>
+    <script>
+        let balance = 250000
+        let num
+        while(num=prompt(`请选择你想要进行的操作:1.取款 2.存款 3.查看余额 4.退出`)){
+            switch(num){
+                case '1':balance=balance- Number(prompt('请输入取款额:')) 
+                alert(`取款成功！！余额:${balance}`)
+                break
+                case '2':balance=balance+ Number(prompt('请输入存款额:'))
+                alert(`取款成功！！余额:${balance}`)
+                break
+                case '3':alert(`你的余额为:${balance}`)
+                break
+            }
+            if(num==4){
+                alert(`欢迎下次光临！！`)
+                document.write(`<div><img src="../css进阶/007.png" alt="" vertical:><p>已经退出了欧~</p></h1><h1>余额:${balance}</h1></div>`)
+                break
+            }
+        }
+    </script>
+</body>
+</html>

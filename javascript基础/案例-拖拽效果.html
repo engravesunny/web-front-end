@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style:none;
+            
+        }
+        a{
+            text-decoration: none;
+        }
+        .http{
+            text-align: center;
+        }
+        .login-bg{
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background:rgba(0,0,0,.5);
+        }
+        .login{
+            position: absolute;
+            border: #ebebeb solid 1px;
+            left: 50%;
+            top: 50%;
+            width: 400px;
+            height: 300px;
+            background-color: #fff;
+            box-shadow: 0px 0px 20px #ddd;
+            /* z-index: 9999; */
+            transform: translate(-50%,-50%);
+        }
+        /* 拖拽区域 */
+        .login .title{
+            width: 400px;
+            height: 40px;
+        }
+        .login .btn{
+            position: absolute;
+            top: 0;
+            right:0;
+        }
+    </style>
+</head>
+<body>
+    <div class="http"><a href="javascript:;"><h1>点此登录</h1></a></div>
+    <div class="login-bg">
+        <div class="login">
+            <div class="title"></div>
+            <button class="btn">X</button>
+            <form action="案例-跳转页面s.html">
+            <input type="text" name="username"><br>
+            <input type="password"><br>
+            <input type="submit">
+            </form>
+        </div>
+    </div>
+    <script>
+
+        //获取元素
+        let login = document.querySelector('.login');
+        let http = document.querySelector('.http');
+        let btn = document.querySelector('.btn');
+        let title = document.querySelector('.title');
+        let lbg = document.querySelector('.login-bg');
+        //注册事件
+        //弹出事件
+        http.addEventListener('click',function(){
+            login.style.display = 'block';
+            lbg.style.display = 'block';
+        })
+        //关闭事件
+        btn.addEventListener('click',function(){
+            login.style.display = 'none';
+            lbg.style.display = 'none';
+        })
+        //拖拽事件
+        title.addEventListener('mousedown',function(e){
+            let x = e.pageX - login.offsetLeft;
+            let y = e.pageY - login.offsetTop;
+            // console.log(y);
+            document.addEventListener('mousemove',move)
+            function move(ex){
+                console.log(ex.pageX - x);
+                console.log(ex.pageY - y);
+                login.style.left = ex.pageX - x + 'px';           
+                login.style.top = ex.pageY - y + 'px';
+            }
+            //鼠标弹起后取消拖拽
+            document.addEventListener('mouseup',function(){
+                document.removeEventListener('mousemove',move)
+            })
+        })
+        
+            
+        
+
+
+    </script>
+</body>
+</html>

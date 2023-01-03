@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="box">
+        <input type="text" v-model="addData" @keyup.enter="add">
+        <ul>
+            <li v-for="(item,index) in arr">
+                {{ index+1 }}:{{ item }}
+                <button @click="remove(index)">X</button>
+            </li>
+            <br>
+            <button v-show=isShow @click="clear">清空</button>
+        </ul>
+    </div>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>

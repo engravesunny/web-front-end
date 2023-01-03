@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            display: flex;
+            justify-content: center;
+        }
+        input{
+            height: 32px;
+            border: 0;
+            border-bottom: 2px solid pink;
+            outline: none;
+        }
+        p{
+            color: pink;
+        }
+        .change{
+            color: red;
+        }
+        .onchange{
+            color:pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">            
+    <input type="password">
+    <p>请输入6-12字符</p>
+    </div>
+    <script>
+        let input = document.querySelector('input');
+        let psd = document.querySelector('p');
+        input.onblur = function(){
+            if(input.value.length<6||input.value.length>12){
+                psd.className='change';
+                psd.innerText='!请输入6-12字符'
+            }
+            if(input.value.length>=6&&input.value.length<=12){
+                psd.className='onchange';
+                psd.innerText='输入正确';
+            }
+        }
+    </script>
+</body>
+</html>

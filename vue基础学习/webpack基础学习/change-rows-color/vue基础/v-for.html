@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        .box{
+            width: 500px;
+            height: 100px;
+            background-color: pink;
+            margin: 100px auto;
+            padding: 0;
+        }
+        .box li{
+            margin-right:10px ;
+            display: block;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box">
+        <input type="text" v-model="adds.name" placeholder="姓名"><input type="text" v-model="adds.stuNum" placeholder="学号"><button>添加</button>
+        <br>
+        <button>删除</button>
+        <ul>
+            <li v-for="(item,index) in obj">
+                姓名:{{ item.name }}<br>
+                学号:{{item.stuNum}}
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <script>
+        let ipt = document.querySelectorAll('input');
+        for(let i=0;i<ipt.length;i++){
+            ipt[i].addEventListener('focus',function(){
+                if(this.value!='')this.value='';
+            })
+        }
+    
+        let box = new Vue({
+            el:"#box",
+            data:{
+                arr:[
+                "北京",
+                "上海",
+                "深圳",
+                "广州"
+            ],
+            obj:[
+                {
+                    name:'琪亚娜',
+                    stuNum:'0821279'
+
+                },
+                {
+                    name:'芽衣',
+                    stuNum:'0821280'
+                },
+                {
+                    name:'布洛妮娅',
+                    stuNum:'0821281'
+                }
+            ],
+                adds:{
+                    name:"姓名",
+                    stuNum:'学号'
+                }
+            },
+            methods: {
+                add:function(){
+                    this.obj.push({name:'希儿',stuNum:'08212798'})
+                },
+                remove:function(){
+                    this.obj.shift()
+                }
+            }
+        })
+    </script>
+</body>
+</html>

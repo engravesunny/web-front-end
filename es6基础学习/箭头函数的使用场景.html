@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        //1.点击box 两秒后变色
+        let box = document.querySelector('.box');
+        box.addEventListener('click',function(){
+            setTimeout(()=>{
+                console.log(this);
+                this.style.background = 'red';
+            },2000)
+        })
+
+        //2.返回数组的偶数
+        let arr = [1,2 ,3 ,4 ,5, 6];
+        let result = arr.filter((item,index,arr)=>item%2===0);
+        console.log(result);
+
+        //总结
+        //箭头函数 适合于this无关的回调 比如定时器，数组的方法回调
+        //不适合与this有关的回调 事件回调 ， 对象的方法
+        let data={
+            name:'xian',
+            genome:()=>{
+                this.name;
+            }
+        }
+    </script>
+</body>
+</html>

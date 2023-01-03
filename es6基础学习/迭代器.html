@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,4,5,5];
+        for(let v of arr){
+            console.log(v);//v是arr中的键值 ， 如果用in迭代则v是arr的键名//0，1，2，3，4，5
+        }
+        let iterator = arr[Symbol.iterator]();
+        // console.log(iterator.next());
+        // console.log(iterator.next());
+        // console.log(iterator.next());
+        // console.log(iterator.next());
+        // console.log(iterator.next());
+        // console.log(iterator.next());
+        // console.log(iterator.next());
+        //自定义迭代对象
+        let data = {
+            name:'xiaoming',
+            arr:[
+                '1',
+                '2',
+                '3',
+                '4',
+                '5'
+            ],
+            [Symbol.iterator](){
+                let index = 0;
+                _this = this;
+                return {
+                    next:function(){
+                        if(index<_this.arr.length){
+                            let res = {value:arr[index],done:false};
+                            index++;
+                            return res;
+                        }
+                        else{
+                            return {value:undefined,done:true}
+                        }
+                    }
+                }
+            }
+            
+        }
+        for(let v of data){
+            console.log(v);
+        }
+    </script>
+</body>
+</html>

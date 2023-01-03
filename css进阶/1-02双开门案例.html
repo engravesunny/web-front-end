@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双开门</title>
+    <style>
+        .box1{
+            margin: 100px auto;
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            overflow: hidden;
+            background-image: url(./07.png);
+            background-size: contain;
+            transition: all 0.5s;
+        }
+        .box2{
+            float: left;
+            width: 200px;
+            height: 400px;
+            background-color: skyblue;
+            transition: all 0.5s;
+            background-image: url(./08.png);
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: cover;
+        }
+        .box3{
+            float: left;
+            width: 200px;
+            height: 400px;
+            transition: all 0.5s;
+            background-color: red;
+            background-repeat: no-repeat;
+            background-image: url(./08.png);
+            background-position: 100% 0;
+            background-size: cover;
+        }
+        .box1:hover{
+            transform: scale(1.5);
+        }
+        .box1:hover .box2{
+            transform: translateY(-100%);
+        }
+        .box1:hover  .box3{
+            transform: translateY(100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2">
+
+        </div>
+        <div class="box3">
+            
+        </div>
+    </div>
+</body>
+</html>

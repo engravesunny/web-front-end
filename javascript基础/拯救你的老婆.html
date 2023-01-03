@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>七夕快乐</title>
+    <style>
+        .ad{
+            position: relative;
+            margin: 100px auto;
+            width: 200px;
+            height: 400px;
+            background-color: pink;
+        }
+        .tfr{
+            position: absolute;
+            top: 400px;
+            right: 100px;
+        }
+        .tse{
+            position: absolute;
+            top: 400px;
+            right: 0;
+        }
+        .ads{
+            display: none;
+            position: relative;
+            margin: 100px auto;
+            width: 200px;
+            height: 400px;
+            background-color: pink;
+        }
+        .timer{
+            text-align: center;
+            position: absolute;
+            top: 450px;
+            right: 50%;
+            font-weight: 900;
+            font-size: 30px;
+
+        }
+        .booms1{
+            display: none;
+            margin: 100px auto;
+            width: 200px;
+            height: 400px;
+            background-color: pink;
+        }
+        .nanzhu{
+            display: none;
+            margin: 100px auto;
+            width: 200px;
+            height: 400px;
+            background-color: pink;
+        }
+        .succ{
+            display: none;
+            margin: 100px auto;
+            width: 200px;
+            height: 400px;
+            background-color: pink;
+        }
+        .rate{
+            position: absolute;
+            top: 400px;
+            right: -50%;
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- main -->
+    <div class="ad">
+        <h1>你老婆即将被炸</h1>
+        <img src="../css进阶/014.png" alt="你老婆" title="你老婆">
+        <h1>炸弹即将爆炸</h1>
+        <button id="fir" class="tfr">用身体挡住炸弹</button>
+        <button id="sec" class="tse">拆除炸弹</button>
+        <div class="rate">!!!30%概率成功</div>
+    </div>
+    <div class="timer">
+        10
+    </div>
+
+
+    <!-- first end 男主死亡-->
+    <div class="nanzhu">
+        <h2>你正在用身体挡住炸弹</h2>
+    </div>
+
+
+    <div class="ads">
+        <h2>你的牺牲使你老婆活了下来</h1>
+        <h3>放心吧</h2>
+            <h1>我会好好养你老婆的</h1>
+    </div>
+
+
+    <!-- second end 炸弹爆炸-->
+    <div class="booms1">
+        <h1>炸弹爆炸</h1>
+        <h2>你老婆没了</h2>
+    </div>
+
+    <!-- good end 女主绳子解开-->
+    <div class="succ">
+        <h1>恭喜</h1>
+        <h2>你解开了你老婆</h2>
+        <h2>身上的绳子</h2>
+        <h1>你们两人最终白头偕老</h1>
+    </div>
+
+
+    <script>
+        //获取元素
+        let flag = 0;
+        let fir = document.querySelector('.tfr');
+        let ad = document.querySelector('.ad');
+        let ads = document.querySelector('.ads');
+        let sec = document.querySelector('#sec');
+        let img = document.querySelector('img');
+        let timers = document.querySelector('.timer');
+        let bend1 = document.querySelector('.booms1');
+        let nanzhu = document.querySelector('.nanzhu');
+        let success1 = document.querySelector('.succ');
+        let rate = document.querySelector('.rate');
+        //注册事件
+        //倒计时
+        function timer2(){
+            let time = timers.innerHTML;
+            time = time - 1;
+            timers.innerHTML = time;
+        }
+
+        //炸弹爆炸
+        function boom(){
+            ad.style.display = 'none';
+            timers.style.display = 'none';
+            if(flag==0)bend1.style.display = 'block';
+            else if(flag ==1){
+                ads.style.display = 'block';
+                nanzhu.style.display = 'none';
+            }
+        }
+
+
+        //男主牺牲
+        function die(){
+            flag = 1;
+            ad.style.display = 'none';
+            nanzhu.style.display = 'block';
+            // ads.style.display = 'block';
+        }
+
+        //隐藏 解开绳子
+        function success(){
+            success1.style.display = 'block';
+            ad.style.display = 'none';
+            timers.style.display = 'none';
+            cobol();
+        }
+        //拆除炸弹
+        function cobol(){
+            let num = Math.random()*10;
+            if(num<=3.5){
+            ad.innerHTML = '<h1>拆弹成功！！</h1><h2>你与你老婆最终</h2><h2>白头偕老</h2>'
+            rate.innerHTML = '拆弹成功!!'
+            clearTimeout(booms);
+            clearInterval(timer1);
+            }
+            else{
+                rate.innerHTML = '拆弹失败!!'
+            }
+        }
+        //炸弹计时
+        let booms = setTimeout(boom,10000);
+        //计时器
+        let timer1 = setInterval(timer2,1000);
+        //牺牲按钮
+        fir.onclick = die;
+        //拆除按钮
+        sec.onclick = cobol;
+        //解开绳子
+        img.onclick = success;
+    </script>
+</body>
+</html>

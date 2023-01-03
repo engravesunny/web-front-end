@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        let names = ['琪亚娜','芽衣','不咯尼亚']
+        function fn(){
+            console.log(arguments);
+        }
+        fn(...names);
+        //1.数组合并
+        let name1 = ['1','2','3']
+        let name2 = ['1','2','3']
+        let name = [...name1,...name2]
+        console.log(name);
+        //2.数组克隆
+        let name3 = [...name]
+        console.log(name3);
+        //3.为数组转数组
+        let div = document.querySelectorAll('div');
+        let divs = [...div];
+        console.log(divs);
+    </script>
+</body>
+</html>

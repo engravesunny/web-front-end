@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="" id="" cols="30" rows="10" placeholder="请输入文字"></textarea>
+    <button>发送</button>
+    <div></div>
+    <script>
+        let text = document.querySelector('textarea');
+        let btn = document.querySelector('button');
+        let div = document.querySelector('div');
+        btn.addEventListener('click',function(){
+            if(text.value == ''){
+                alert('你没有输入任何文字');
+                return;
+            }
+            let cont = text.value.replace(/激情|基情/g,'**');
+            div.innerHTML = cont;
+            text.value = '';
+        })
+    </script>
+</body>
+</html>
