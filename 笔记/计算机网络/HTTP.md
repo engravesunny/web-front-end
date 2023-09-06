@@ -246,10 +246,6 @@ CA 签发证书的过程，如上图左边部分：
 
 **这是为了确保根证书的绝对安全性，将根证书隔离地越严格越好，不然根证书如果失守了，那么整个信任链都会有问题。**
 
-
-
-
-
 # 2. 彻底搞懂HTTPS的加密原理
 
 HTTPS（SSL/TLS）的加密机制虽然是大家都应了解的基本知识，但网上很多相关文章总会忽略一些内容，没有阐明完整的逻辑脉络，我学习它的时候也曾废了些功夫。
@@ -268,7 +264,7 @@ HTTPS（SSL/TLS）的加密机制虽然是大家都应了解的基本知识，�
 
 ![img](https://pic1.zhimg.com/80/v2-1252526c263ee50c47b7b49bd1c2ef44_720w.jpg)
 
-对称加密（https://sectigostore.com/blog/types-of-encryption-what-to-know-about-symmetric-vs-asymmetric-encryption/)
+对称加密（<https://sectigostore.com/blog/types-of-encryption-what-to-know-about-symmetric-vs-asymmetric-encryption/>)
 
 ## **用对称加密可行吗？**
 
@@ -285,9 +281,9 @@ HTTPS（SSL/TLS）的加密机制虽然是大家都应了解的基本知识，�
 
 ![img](https://pic1.zhimg.com/80/v2-1589bbfab027eb9f52da03c02a837fd4_720w.jpg)
 
-非对称加密（https://sectigostore.com/blog/types-of-encryption-what-to-know-about-symmetric-vs-asymmetric-encryption/)
+非对称加密（<https://sectigostore.com/blog/types-of-encryption-what-to-know-about-symmetric-vs-asymmetric-encryption/>)
 
-##  用非对称加密可行吗？
+## 用非对称加密可行吗？
 
 鉴于非对称加密的机制，我们可能会有这种思路：服务器先把公钥以明文方式传输给浏览器，之后浏览器向服务器传数据前都先用这个公钥加密好再传，这条数据的安全似乎可以保障了！**因为只有服务器有相应的私钥能解开公钥加密的数据**。
 
@@ -322,7 +318,7 @@ HTTPS（SSL/TLS）的加密机制虽然是大家都应了解的基本知识，�
 
 ![img](https://pic2.zhimg.com/80/v2-daeb6b8b0ac5411d51d60bd08b551789_720w.jpg)
 
-中间人攻击（https://blog.pradeo.com/man-in-the-middle-attack)
+中间人攻击（<https://blog.pradeo.com/man-in-the-middle-attack>)
 
 如果在数据传输过程中，中间人劫持到了数据，此时他的确无法得到浏览器生成的密钥X，这个密钥本身被公钥A加密了，只有服务器才有私钥A’解开它，然而中间人却完全不需要拿到私钥A’就能干坏事了。请看：
 
@@ -359,8 +355,7 @@ HTTPS（SSL/TLS）的加密机制虽然是大家都应了解的基本知识，�
 
 ![img](https://pic2.zhimg.com/80/v2-7c78935389af46e197e96d9cd91c06dd_720w.jpg)
 
-数字签名的生成与验证（https://cheapsslsecurity.com/blog/digital-signature-vs-digital-certificate-the-difference-explained/)
-
+数字签名的生成与验证（<https://cheapsslsecurity.com/blog/digital-signature-vs-digital-certificate-the-difference-explained/>)
 
 数字签名的制作过程：
 
@@ -412,7 +407,7 @@ HTTPS（SSL/TLS）的加密机制虽然是大家都应了解的基本知识，�
 
 ![img](https://pic2.zhimg.com/80/v2-04cd27f3f46388df2d8d70375c4ecac5_720w.jpg)
 
-信任链（https://publib.boulder.ibm.com/tividd/td/TRM/GC32-1323-00/en_US/HTML/admin230.htm)
+信任链（<https://publib.boulder.ibm.com/tividd/td/TRM/GC32-1323-00/en_US/HTML/admin230.htm>)
 
 ## **每次进行HTTPS请求时都**必须**在SSL/TLS层进行握手传输密钥吗？**
 
@@ -426,8 +421,6 @@ HTTPS（SSL/TLS）的加密机制虽然是大家都应了解的基本知识，�
 
 ![img](https://pic2.zhimg.com/80/v2-a0d10af45e785fe8d3f5cd12f8c309f5_720w.jpg)
 
-
-
 至此，我们已自上而下地打通了HTTPS加密的整体脉络以及核心知识点，不知你是否真正搞懂了HTTPS呢？
 找几个时间，多看、多想、多理解几次就会越来越清晰的！
 那么，下面的问题你是否已经可以解答了呢？
@@ -437,12 +430,6 @@ HTTPS（SSL/TLS）的加密机制虽然是大家都应了解的基本知识，�
 3. 为什么需要数字证书？
 4. 为什么需要数字签名？
    …
-
-
-
-
-
-
 
 # 3. HTTP/1.1、HTTP/2、HTTP/3 演变
 
@@ -679,8 +666,6 @@ QUIC 是新协议，对于很多网络设备，根本不知道什么是 QUIC，�
 
 所以，HTTP/3 现在普及的进度非常的缓慢，不知道未来 UDP 是否能够逆袭 TCP。
 
-
-
 # 4. HTTP 常见的状态码有哪些？
 
 ![ 五大类 HTTP 状态码 ](https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP/6-%E4%BA%94%E5%A4%A7%E7%B1%BBHTTP%E7%8A%B6%E6%80%81%E7%A0%81.png)
@@ -714,10 +699,6 @@ QUIC 是新协议，对于很多网络设备，根本不知道什么是 QUIC，�
 - 「**501 Not Implemented**」表示客户端请求的功能还不支持，类似“即将开业，敬请期待”的意思。
 - 「**502 Bad Gateway**」通常是服务器作为网关或代理时返回的错误码，表示服务器自身工作正常，访问后端服务器发生了错误。
 - 「**503 Service Unavailable**」表示服务器当前很忙，暂时无法响应客户端，类似“网络服务正忙，请稍后重试”的意思。
-
-
-
-
 
 # 5. HTTP 常见字段有哪些？
 
@@ -797,8 +778,6 @@ Content-Encoding: gzip
 Accept-Encoding: gzip, deflate
 ```
 
-
-
 # 6. GET 与 POST
 
 ## GET 和 POST 有什么区别？
@@ -854,8 +833,6 @@ RFC 规范并没有规定 GET 请求不能带 body 的。理论上，任何请�
 
 另外，URL 中的查询参数也不是 GET 所独有的，POST 请求的 URL 中也可以有参数的。
 
-
-
 # 7. HTTP 缓存技术
 
 ## 一、缓存介绍
@@ -874,22 +851,16 @@ RFC 规范并没有规定 GET 请求不能带 body 的。理论上，任何请�
 网站的 html 是不能被缓存的。因为网站在使用过程中 html 随时有可能被更新，随时有可能被替换模板。
 网页的业务数据也是不能被缓存的。比如留言板和评论区，用户随时都可以在底下评论，那数据库的内容就会被频繁被更新。
 
-
-
 ## 二、强制缓存
 
-### 1、定义：
+### 1、定义
 
 **强缓存：浏览器不会向服务器发送任何请求，直接从本地缓存中读取文件并返回。**
 
 **Status Code:200**
 
-
-
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/7292aa753db14f709a03229f19c66ba6.png)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/215930822ea545c3b2d97239afb4f195.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5LiO5a6H5a6Z5a-56KeG,size_20,color_FFFFFF,t_70,g_se,x_16)
-
-
 
 **200 (from memory cache):** 不访问服务器，一般已经加载过该资源且缓存存在了内存当中，直接从内存中中读取缓存。浏览器关闭后，数据将不存在（资源被释放掉了），再次打开相同的页面时，不会出现from memory cache。
 
@@ -911,8 +882,6 @@ cache-control：除了该字段外，还有下面几个比较常用的设置值�
 > （5）no-cache：强制客户端直接向服务器发送请求,也就是说每次请求都必须向服务器发送。服务器接收到 请求，然后判断资源是否变更，是则返回新内容，否则返回304，未变更。这个很容易让人产生误解，使人误 以为是响应不被缓存。实际上Cache-Control: no-cache是会被缓存的，只不过每次在向客户端（浏览器）提供响应数据时，缓存都要向服务器评估缓存响应的有效性。
 > （6）no-store：禁止一切缓存（这个才是响应不被缓存的意思）。
 
-
-
 >cache-control是http1.1的头字段，expires是http1.0的头字段,如果expires和cache-control同时存在，cache-control会覆盖expires，建议两个都写。
 >如果 cache-control 与 expires 同时存在的话， cache-control 的优先级高于 expires
 
@@ -929,7 +898,6 @@ cache-control：除了该字段外，还有下面几个比较常用的设置值�
 在上图中，表明了协商缓存的全过程。首先，如果客户端是第一次向服务器发出请求，则服务器返回资源和相对应的资源标识给浏览器。该资源标识就是对当前所返回资源的一种唯一标识，可以是Etag或者是Last-Modified，这两个字段将在图例结束后展开讲解。
 
 之后如果浏览器再次发送请求时，浏览器就会带上这个资源标识。此时，服务端就会通过这个资源标识，可以判断出浏览器的资源跟服务端此时的资源是否一致，如果一致，则返回304，即表示Not Found 资源未修改。如果判断结果为不一致，则返回200，并返回资源以及新的资源标识。至此就结束了协商缓存的过程。
-
 
 ### 2、设置协商缓存的方式 (Last-Modified , If-Modified-Since) & (ETag , If-None-Match)
 
@@ -955,16 +923,14 @@ cache-control：除了该字段外，还有下面几个比较常用的设置值�
 
 ### 3、对比
 
-* 当响应头部 **Response Headers** 同时存在 **Last-Modified** 和 **Etag** 的值时，会优先使用Etag;
+- 当响应头部 **Response Headers** 同时存在 **Last-Modified** 和 **Etag** 的值时，会优先使用Etag;
   Etag优先级是高于Last-Modifed的，所以服务器会优先验证Etag
-* **Last-Modified** 只能精确到秒级，而**Etag**可以更精确。
-* 如果资源被重复生成，而内容不变，则**Etag**更精确
+- **Last-Modified** 只能精确到秒级，而**Etag**可以更精确。
+- 如果资源被重复生成，而内容不变，则**Etag**更精确
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/96338ce5385d4b5ca8c818ef9298d66d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5LiO5a6H5a6Z5a-56KeG,size_20,color_FFFFFF,t_70,g_se,x_16)
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/82d8e49b3c8947bb8d66ffff46f812e0.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5LiO5a6H5a6Z5a-56KeG,size_20,color_FFFFFF,t_70,g_se,x_16)
-
-
 
 ## 四、刷新操作对缓存的影响
 
@@ -983,19 +949,11 @@ cache-control：除了该字段外，还有下面几个比较常用的设置值�
 **定义：** ctrl + F5 。
 **对缓存的影响：** 强制缓存失效，协商缓存失效。
 
-
-
 ## 五、总结
 
 > 注意，**协商缓存这两个字段都需要配合强制缓存中 Cache-control 字段来使用，只有在未能命中强制缓存的时候，才能发起带有协商缓存字段的请求**。
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/161f44b55ee44001af39925df5838c22.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5LiO5a6H5a6Z5a-56KeG,size_20,color_FFFFFF,t_70,g_se,x_16)
-
-
-
-
-
-
 
 # 8. HTTP/1.1如何优化？
 
@@ -1015,8 +973,7 @@ cache-control：除了该字段外，还有下面几个比较常用的设置值�
 
 ## 如何避免发送 HTTP 请求？
 
-这个思路你看到是不是觉得很奇怪，不发送 HTTP 请求，那客户端还怎么和服务器交互数据？小林你这不是耍流氓嘛？
-
+这个思路你看到是不是觉得很奇怪，不发送 HTTP 请求，那客户端还怎么和服务器交互数据？
 冷静冷静，你说的没错，客户端当然要向服务器发送请求的。
 
 但是，对于一些具有重复性的 HTTP 请求，比如每次请求得到的数据都一样的，我们可以把这对「请求-响应」的数据都**缓存在本地**，那么下次就直接读取本地的数据，不必在通过网络获取服务器的响应了，这样的话 HTTP/1.1 的性能肯定肉眼可见的提升。
@@ -1197,8 +1154,6 @@ Accept: audio/*; q=0.2, audio/basic
 第三思路是，通过压缩响应资源，降低传输资源的大小，从而提高传输效率，所以应当选择更优秀的压缩算法。
 
 不管怎么优化 HTTP/1.1 协议都是有限的，不然也不会出现 HTTP/2 和 HTTP/3 协议，后续我们再来介绍 HTTP/2 和 HTTP/3 协议。
-
-
 
 # 9. HTTP/2 牛逼在哪？
 
@@ -1458,8 +1413,6 @@ HTTP/2 通过 Stream 的并发能力，解决了 HTTP/1 队头阻塞的问题，
 
 ![img](https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP/27-HTTP3.png)
 
-
-
 # 10. HTTP/3 强势来袭
 
 HTTP/3 现在还没正式推出，不过自 2017 年起， HTTP/3 已经更新到 34 个草案了，基本的特性已经确定下来了，对于包格式可能后续会有变化。
@@ -1609,10 +1562,6 @@ QUIC 协议的特点：
 
 **期待，HTTP/3 正式推出的那一天！**
 
-
-
-
-
 # 11. 键入网址到网页显示，期间发生了什么？
 
 想必不少小伙伴面试过程中，会遇到「**当键入网址后，到网页显示，其间发生了什么**」的面试题。
@@ -1687,11 +1636,11 @@ DNS 中的域名都是用**句点**来分隔的，比如 `www.server.com`，这�
 
 > 域名解析的工作流程
 
-1. 客户端首先会发出一个 DNS 请求，问 www.server.com 的 IP 是啥，并发给本地 DNS 服务器（也就是客户端的 TCP/IP 设置中填写的 DNS 服务器地址）。
-2. 本地域名服务器收到客户端的请求后，如果缓存里的表格能找到 www.server.com，则它直接返回 IP 地址。如果没有，本地 DNS 会去问它的根域名服务器：“老大， 能告诉我 www.server.com 的 IP 地址吗？” 根域名服务器是最高层次的，它不直接用于域名解析，但能指明一条道路。
+1. 客户端首先会发出一个 DNS 请求，问 <www.server.com> 的 IP 是啥，并发给本地 DNS 服务器（也就是客户端的 TCP/IP 设置中填写的 DNS 服务器地址）。
+2. 本地域名服务器收到客户端的请求后，如果缓存里的表格能找到 <www.server.com，则它直接返回> IP 地址。如果没有，本地 DNS 会去问它的根域名服务器：“老大， 能告诉我 <www.server.com> 的 IP 地址吗？” 根域名服务器是最高层次的，它不直接用于域名解析，但能指明一条道路。
 3. 根 DNS 收到来自本地 DNS 的请求后，发现后置是 .com，说：“www.server.com 这个域名归 .com 区域管理”，我给你 .com 顶级域名服务器地址给你，你去问问它吧。”
-4. 本地 DNS 收到顶级域名服务器的地址后，发起请求问“老二， 你能告诉我 www.server.com 的 IP 地址吗？”
-5. 顶级域名服务器说：“我给你负责 www.server.com 区域的权威 DNS 服务器的地址，你去问它应该能问到”。
+4. 本地 DNS 收到顶级域名服务器的地址后，发起请求问“老二， 你能告诉我 <www.server.com> 的 IP 地址吗？”
+5. 顶级域名服务器说：“我给你负责 <www.server.com> 区域的权威 DNS 服务器的地址，你去问它应该能问到”。
 6. 本地 DNS 于是转向问权威 DNS 服务器：“老三，www.server.com对应的IP是啥呀？” server.com 的权威 DNS 服务器，它是域名解析结果的原出处。为啥叫权威呢？就是我的域名我做主。
 7. 权威 DNS 服务器查询后将对应的 IP 地址 X.X.X.X 告诉本地 DNS。
 8. 本地 DNS 再将 IP 地址返回客户端，客户端和目标建立连接。
@@ -2129,10 +2078,6 @@ Mac地址只能是两个设备之间传递时使用的，如果你要从大老�
 
 转发的过程中，源IP地址和目标IP地址是不会变的，源MAC地址和目标MAC地址是会变化的。
 
-
-
-
-
 # 12. WebSocket 原理
 
 ## 一、前言
@@ -2472,4 +2417,3 @@ ws.send("hello world");
 - WebSocket 中的掩码是为了防止早期版本中存在中间缓存污染攻击等问题而设置的，客户端向服务端发送数据需要掩码，服务端向客户端发送数据不需要掩码。
 - WebSocket 中 Sec-WebSocket-Key 的生成算法是拼接服务端和客户端生成的字符串，进行SHA1哈希算法，再用base64编码。
 - WebSocket 协议握手是依靠 HTTP 协议的，依靠于 HTTP 响应101进行协议升级转换。
-

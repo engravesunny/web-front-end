@@ -1,6 +1,8 @@
 ﻿# mongoDB简易上手
+>
 > 完整代码在gitee上
-> 地址：https://gitee.com/gaohan888/node-js-learning/tree/master/mongodb
+> 地址：<https://gitee.com/gaohan888/node-js-learning/tree/master/mongodb>
+>
 ## 1. mongoDB的环境搭建
 
 ### 1.1数据库相关概念
@@ -9,28 +11,17 @@
 
 ![请添加图片描述](https://img-blog.csdnimg.cn/cbe5d7285e36432ca1541985ee9e49bc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAaGFuZ2FvMjMz,size_20,color_FFFFFF,t_70,g_se,x_16)
 
-
-
-
 ### 1.2 Mongoose第三方包
 
 * 使用Node.js操作MongoDB数据库需要依赖Node.js第三方包mongoose
 
 * 使用**npm install mongoose**命令下载
 
-
-
-
-
 ### 1.3 启动mongoDB
 
 在命令行工具中运行**net start mongoDB**即可启动MongoDB，否则MongoDB将无法连接。
 
 > 这个启动命令需要在管理员模式下运行
-
-
-
-
 
 ### 1.4 数据库连接
 
@@ -44,19 +35,11 @@ mongoose.connect('mongodb://localhost/playground')
     .catch(err => console.log('数据库连接失败', err))
 ```
 
-
-
-
-
 ### 1.5 创建数据库
 
 在MongoDB中**不需要显式创建数据库**，如果正在使用的数据库不存在，**MongoDB**会自动创建。
 
 > 在创建集合时会自动创建数据库
-
-
-
-
 
 ## 2. MongoDB 增删改查操作
 
@@ -82,8 +65,6 @@ const courseSchema = new mongoose.Schema({
 const Course = mongoose.model('Course', courseSchema); // courses
 
 ```
-
-
 
 ### 2.2 创建文档
 
@@ -118,25 +99,19 @@ Course.create({name: 'javascript', author: 'aaaaa', isPublished: true})
     .catch(err => console.log(err))
 ```
 
-
-
-
-
 ### 2.3 mongoDB 数据库导入数据
 
 前提：找到mongodb数据库的安装目录，将安装目录下的bin目录放置在环境变量中。
 
 mongoimport –d 数据库名称 –c 集合名称 –file 要导入的数据文件。
 
-```
+```bash
 mongoimport -d playground -c users --file user.json
 ```
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/78d37e2f8b724708886cfe0179a8773a.png)
 
-
 > 出现这个结果就是导入成功
-
-
 
 ### 2.4 查询文档
 
@@ -201,10 +176,6 @@ User.find().sort('-age').then(result => console.log(result))
 User.find().skip(2).limit(2).then(result => console.log(result))
 ```
 
-
-
-
-
 ### 2.5 删除文档
 
 **删除单个**
@@ -219,10 +190,6 @@ User.findByIdAndDelete({_id: '5c09f2b6aeb04b22f846096a'}).then(result => console
 User.deleteMany({}).then(result => console.log(result))
 ```
 
-
-
-
-
 ### 2.6 更新文档
 
 **更新单个**
@@ -236,10 +203,6 @@ User.updateOne({name: '李四'}, {name: '李逍遥'}).then(result => console.log
 ```js
 User.updateMany({}, {age: 56}).then(result => console.log(result))
 ```
-
-
-
-
 
 ### 2.7 mongoose 验证
 
@@ -314,10 +277,6 @@ const Post = mongoose.model('Post', postSchema);
 Post.create({title: 'abc', age: 60, category: 'javascript',author: 'aaaaa'}).then(res => console.log(res))
 ```
 
-
-
-
-
 ### 2.8 集合关联
 
 通常**不同集合的数据之间是有关系的**，例如文章信息和用户信息存储在不同集合中，但文章是某个用户发表的，要查询文章的所有信息包括发表用户，就需要用到集合关联。
@@ -326,7 +285,6 @@ Post.create({title: 'abc', age: 60, category: 'javascript',author: 'aaaaa'}).the
 * 使用populate方法进行关联集合查询
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/4dc0d641f44944d1b62f4da68302f32c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAaGFuZ2FvMjMz,size_15,color_FFFFFF,t_70,g_se,x_16)
-
 
 **集合关联实现**
 
@@ -371,8 +329,6 @@ const Post = mongoose.model('Post', postSchema);
 // 联合查询
 Post.find().populate('author').then(res => console.log(res))
 ```
-
-
 
 ### 2.9 案例：用户信息增删改查
 

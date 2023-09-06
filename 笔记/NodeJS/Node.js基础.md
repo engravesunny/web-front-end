@@ -53,10 +53,6 @@
 
 其实，`Nodejs`能实现几乎一切的应用，只考虑适不适合使用它
 
-
-
-
-
 # 2. 说说 Node. js 有哪些全局对象？
 
 ![img](https://static.vue-js.com/79c7b100-c2a3-11eb-85f6-6fac77c0c9b3.png)
@@ -251,10 +247,6 @@ exports.sayHello = sayHello;
 
 可以使用相对路径引入本地模块或`JSON`文件，路径会根据`__dirname`定义的目录名或当前工作目录进行处理
 
-
-
-
-
 # 3. 说说对 Node 中的 process 的理解？有哪些常用方法？
 
 ## 一、是什么
@@ -344,12 +336,6 @@ console.log('bar');
 
 - process.nextTick()会在这一次event loop的call stack清空后（下一次event loop开始前）再调用callback
 - setTimeout()是并不知道什么时候call stack清空的，所以何时调用callback函数是不确定的
-
-
-
-
-
-
 
 # 4. 说说对 Node 中的 fs模块的理解? 有哪些常用方法
 
@@ -577,10 +563,6 @@ fs.mkdir("a/b/c", err => {
 });
 ```
 
-
-
-
-
 # 5. 说说对 Node 中的 Buffer 的理解？应用场景？
 
 ## 一、是什么
@@ -705,6 +687,3 @@ inputStream.pipe(outputStream); // 管道读写
 ### zlib.js
 
 `zlib.js` 为 `Node.js` 的核心库之一，其利用了缓冲区（`Buffer`）的功能来操作二进制数据流，提供了压缩或解压功能
-
-
-

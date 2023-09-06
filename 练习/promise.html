@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./myPromise.js"></script>
+    <script>
+        let p1 = new myPromise((resolve, reject) => {
+            setTimeout(() => {
+                // resolve("kecat1")
+                reject("keqing")
+            }, 100);
+        })
+
+        let p2 = new myPromise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("kecat2")
+                // reject("kemaomao")
+            }, 200);
+        })
+
+        let p3 = new myPromise((resolve, reject) => {
+            setTimeout(() => {
+                // resolve("kecat4")
+                reject("kemaomao")
+            }, 400);
+        })
+
+
+        let p4 = new myPromise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("kecat3")
+            }, 300)
+        })
+
+        const promises = [p1, p2, p3, p4];
+
+        myPromise.allSettled(promises).then(res => {
+            console.log(res);
+        }, reason => {
+            console.log(reason);
+        })
+
+        const result = myPromise.all(promises)
+        console.log(result);
+    </script>
+</body>
+</html>
