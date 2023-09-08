@@ -1,12 +1,11 @@
-const deepClone = (obj) => {
+const deepClone = function (obj) {
     const cache = new WeakMap();
-    const _deepClone = (value) => {
-        if (typeof value !== "object" || value == null) return value;
+    const _deepClone = function (value) {
+        if (value == null || typeof value !== "object") return value;// value非引用类型
         if (value instanceof Date) return new Date(value);
         if (value instanceof RegExp) return new RegExp(value);
         if (cache.has(value)) return cache.get(value);
-
-        let cloneObj = new value.constructor();
+        const cloneObj = new value.constructor();
         cache.set(value, cloneObj);
         for (let key in value) {
             if (value.hasOwnProperty(key)) {
@@ -17,7 +16,6 @@ const deepClone = (obj) => {
     }
     return _deepClone(obj);
 }
-
 
 const obj = {
     name: "kecat",

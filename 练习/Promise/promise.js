@@ -36,8 +36,8 @@ function myPromise(executor) {
 }
 
 myPromise.prototype.then = function (onResolve, onReject) {
-    onResolve = typeof onResolve === "function" ? onResolve : () => { };
-    onReject = typeof onReject === "function" ? onReject : () => { };
+    onResolve = typeof onResolve === "function" ? onResolve : result => result;
+    onReject = typeof onReject === "function" ? onReject : (e) => { throw new Error(e) };
     return new myPromise((resolve, reject) => {
         try {
             if (this.PromiseState === "fulfilled") {
@@ -69,7 +69,7 @@ myPromise.prototype.then = function (onResolve, onReject) {
                     try {
                         let result = onResolve(data);
                         if (result instanceof myPromise) {
-                            result.them(res => {
+                            result.then(res => {
                                 resolve(res);
                             }, reason => {
                                 reject(reason);
@@ -100,78 +100,6 @@ myPromise.prototype.then = function (onResolve, onReject) {
             }
         } catch (error) {
             reject(error.message)
-        }
-    })
-}
-
-myPromise.prototype.catch = function (onReject) {
-    return this.then(undefined, onReject);
-}
-
-myPromise.all = function (promises) {
-    return new myPromise((resolve, reject) => {
-        if (!Array.isArray(promises)) {
-            reject(`TypeError: promises must be an array, got ${promises}`)
-        }
-
-        const result = [];
-        let over = false;
-        let count = 0;
-        if (promises.length === 0) {
-            resolve(result);
-        }
-        for (let promise of promises) {
-            if (over) {
-                return;
-            }
-            if (promise instanceof myPromise) {
-                promise.then(res => {
-                    result[count++] = res;
-                    if (count === promises.length) resolve(result);
-                }, reason => {
-                    if (!over) {
-                        reject(reason);
-                        over = true;
-                    }
-                })
-            } else {
-                result[count++] = promise;
-                if (count === promise.length) {
-                    resolve(result);
-                }
-            }
-        }
-    })
-}
-
-myPromise.allSettled = function (promises) {
-    return new myPromise((resolve, reject) => {
-        if (!Array.isArray(promises)) {
-            reject(`TypeError: expect an array, got ${promises}`)
-        }
-        const result = [];
-        let count = 0;
-        if (promises.length === 0) {
-            resolve(result);
-        }
-        for (let promise of promises) {
-            promise.then(res => {
-                result[count++] = {
-                    state: "fulfilled",
-                    value: res
-                };
-                if (count === promises.length) {
-                    resolve(result)
-                }
-            }, reason => {
-                result[count++] = {
-                    state: "rejected",
-                    value: reason
-                };
-                if (count === promises.length) {
-                    resolve(result)
-                }
-            })
         }
     })
 }
