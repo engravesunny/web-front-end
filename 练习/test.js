@@ -1,12 +1,29 @@
-const obj = {
-    a: 1,
-    b: {
-        c: 2
-    }
+setTimeout(() => {
+    console.log(1);
+}, 0);
+
+new Promise((resolve) => {
+    console.log(2);
+    resolve();
+    console.log(3);
+}).then(() => {
+    console.log(4);
+})
+
+const promise2 = new Promise(async (resolve) => {
+    console.log(await resolve(5));
+    console.log(6);
+});
+
+async function test() {
+    console.log(7);
+    console.log(await promise2);
+    console.log(8);
 }
 
-const newObj = Object.assign({}, obj)
+test();
+console.log(9);
 
-obj.b.c = 10;
+// 2 3 7 9 4 5 6 8 1
 
-console.log(newObj.b.c);
+
