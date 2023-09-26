@@ -28,7 +28,6 @@ async function promiseControl(urls, limit) {
             await Promise.race(pool)
         }
     }
-
 }
 
-promiseControl(urls);
+promiseControl(urls, 3);

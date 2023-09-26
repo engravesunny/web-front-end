@@ -110,7 +110,5 @@ class Watch {
         console.log(1111);
         this.node[this.attr] = this.vm[this.key];
     }
-
-
 }
 

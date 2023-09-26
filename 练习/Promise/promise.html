@@ -1,51 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <script src="./myPromise.js"></script>
+    <script src="./p1.js"></script>
     <script>
         let p1 = new myPromise((resolve, reject) => {
             setTimeout(() => {
-                // resolve("kecat1")
-                reject("keqing")
+                // reject("keqing1")
+                resolve('keqing1')
             }, 100);
         })
-
         let p2 = new myPromise((resolve, reject) => {
             setTimeout(() => {
-                resolve("kecat2")
-                // reject("kemaomao")
+                resolve('keqing2')
+                // reject("keqing2")
             }, 200);
         })
-
         let p3 = new myPromise((resolve, reject) => {
             setTimeout(() => {
-                // resolve("kecat4")
-                reject("kemaomao")
-            }, 400);
+                resolve('keqing3')
+                // reject("keqing3")
+            }, 300);
         })
-
-
         let p4 = new myPromise((resolve, reject) => {
             setTimeout(() => {
-                resolve("kecat3")
-            }, 300)
+                resolve('keqing4')
+                // reject("keqing4")
+            }, 400);
         })
-
-        const promises = [p1, p2, p3, p4];
-
-        myPromise.allSettled(promises).then(res => {
+        let p5 = new myPromise((resolve, reject) => {
+            setTimeout(() => {
+                reject('keqing5')
+                // reject("keqing5")
+            }, 500);
+        })
+        let p6 = new myPromise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('keqing6')
+                // reject("keqing6")
+            }, 30);
+        })
+        const promises = [p2, p3, p4, p1, p6, p5];
+        myPromise.race(promises).then(res => {
             console.log(res);
-        }, reason => {
-            console.log(reason);
+        }).catch(err => {
+            console.log(err);
         })
-
-        const result = myPromise.all(promises)
-        console.log(result);
     </script>
 </body>
+
 </html>
