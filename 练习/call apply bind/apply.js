@@ -7,7 +7,6 @@ Function.prototype._apply = function (context, args) {
     delete context[_fn];
     return result;
 }
-
 const a = [1, 2, 3, 4, 5, 5, 6, 6, 7, 7];
 const res = Array.prototype.map._apply(a, [item => {
     console.log(item);
