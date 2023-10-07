@@ -8,50 +8,54 @@
 </head>
 
 <body>
-    <script src="./p1.js"></script>
+    <script src="./dist/p2.js"></script>
     <script>
-        let p1 = new myPromise((resolve, reject) => {
+        let p1 = new Promise((resolve, reject) => {
             setTimeout(() => {
-                // reject("keqing1")
-                resolve('keqing1')
+                reject("keqing1")
+                // resolve('keqing1')
             }, 100);
         })
-        let p2 = new myPromise((resolve, reject) => {
-            setTimeout(() => {
-                resolve('keqing2')
-                // reject("keqing2")
-            }, 200);
-        })
-        let p3 = new myPromise((resolve, reject) => {
-            setTimeout(() => {
-                resolve('keqing3')
-                // reject("keqing3")
-            }, 300);
-        })
-        let p4 = new myPromise((resolve, reject) => {
-            setTimeout(() => {
-                resolve('keqing4')
-                // reject("keqing4")
-            }, 400);
-        })
-        let p5 = new myPromise((resolve, reject) => {
-            setTimeout(() => {
-                reject('keqing5')
-                // reject("keqing5")
-            }, 500);
-        })
-        let p6 = new myPromise((resolve, reject) => {
-            setTimeout(() => {
-                resolve('keqing6')
-                // reject("keqing6")
-            }, 30);
-        })
-        const promises = [p2, p3, p4, p1, p6, p5];
-        myPromise.race(promises).then(res => {
+        p1.then((res) => {
             console.log(res);
-        }).catch(err => {
-            console.log(err);
-        })
+        }).catch((err) => { console.log(err); })
+        console.log('%c [  ]-20', 'font-size:13px; background:pink; color:#bf2c9f;', p1)
+        // let p2 = new myPromise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve('keqing2')
+        //         // reject("keqing2")
+        //     }, 200);
+        // })
+        // let p3 = new myPromise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve('keqing3')
+        //         // reject("keqing3")
+        //     }, 300);
+        // })
+        // let p4 = new myPromise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve('keqing4')
+        //         // reject("keqing4")
+        //     }, 400);
+        // })
+        // let p5 = new myPromise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         reject('keqing5')
+        //         // reject("keqing5")
+        //     }, 500);
+        // })
+        // let p6 = new myPromise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve('keqing6')
+        //         // reject("keqing6")
+        //     }, 30);
+        // })
+        // const promises = [p2, p3, p4, p1, p6, p5];
+        // myPromise.race(promises).then(res => {
+        //     console.log(res);
+        // }).catch(err => {
+        //     console.log(err);
+        // })
     </script>
 </body>
 

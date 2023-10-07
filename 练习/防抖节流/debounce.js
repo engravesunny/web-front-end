@@ -28,3 +28,25 @@ const timer = setInterval(() => {
     fnDebounce();
 }, 100)
 
+const debunce = (fn, delay) => {
+    let timer = null;
+    return function (...args) {
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+            fn.apply(null, args);
+            clearTimeout(timer)
+        }, delay);
+    }
+}
+
+const throllte = (fn, delay) => {
+    let timer = null;
+    return function (...args) {
+        if (timer) return;
+        timer = setTimeout(() => {
+            fn.apply(null, args)
+            clearInterval(timer)
+            timer = null;
+        }, delay)
+    }
+}
