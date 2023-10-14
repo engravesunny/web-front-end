@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="
+        width=device-width,
+        initial-scale=1.0,
+        maximum-scale=1.0,
+        minimum-scale=1.0
+    ">
+    <title>面试html</title>
+</head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .box {
+        display: none;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+</style>
+
+<body>
+    <div class="box" draggable="true"></div>
+    <script>
+        const box = document.querySelector('.box')
+        box.addEventListener('dragstart',() => {
+            console.log('dragstart');
+        })
+        document.addEventListener('dragover',() => {
+            console.log('dragover');
+        })
+        box.addEventListener('drop',(e) => {
+            console.log(e,'drop');
+        })
+    </script>
+</body>
+</html>
